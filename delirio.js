@@ -224,16 +224,21 @@
 
   function construirMini(){
 
-    document.querySelectorAll(".mini").forEach(mini => {
+     <a href="semanal.html" class="mini-semanal">
+    <img
+      src="imagenes/semanalim.png"
+      alt="Semanal"
+    >
+  </a>
 
-      mini.innerHTML = `
+  <div class="mini-divider"></div>
 
-        <a href="revista.html">
-          <img
-            class="cover"
-            src="${MINI.portada}"
-            alt="Portada de ${MINI.edicion}"
-          >
+  <a href="revista.html">
+    <img
+      class="cover"
+      src="${MINI.portada}"
+      alt="Portada de ${MINI.edicion}"
+    >
         </a>
 
         <h3 class="mini-title">
