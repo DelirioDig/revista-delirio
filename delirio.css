@@ -1078,7 +1078,7 @@ a:hover{
 }
 
 .blog-entry-head .blog-name{
-  font:900 20px Poppins,sans-serif;
+  font:900 20px 'Playfair Display',serif;
 
   color:var(--rojo);
 
@@ -1094,7 +1094,7 @@ a:hover{
 }
 
 .blog-entry-title{
-  font:italic 50px/1.02 'DM Serif Display',serif;
+  font:400 50px/1.02 Benne,serif;
 
   text-align:center;
 
@@ -1102,9 +1102,9 @@ a:hover{
 }
 
 .article-date{
-  font:18px Benne,serif;
+  font:700 13px Poppins,sans-serif;
 
-  margin-top:10px;
+  font-variant:small-caps;
 }
 
 .font-tools{
@@ -1240,11 +1240,7 @@ body.dark .button{
    ============================================================ */
 
 .sidebar{
-  display:flex;
-
-  flex-direction:column;
-
-  gap:15px;
+  display:none !important;
 }
 
 .sidebar-cover{
