@@ -155,7 +155,7 @@
       autor: "Natalia Regnier",
       enlace: "NR_01.html"
     },
-    anuncio: "ANUNCIO",
+    anuncio: "¿Es lícito un beso con los ojos abiertos?",
     cumpleanos: {
       dia: "+100",
       mes: "DÍAS",
