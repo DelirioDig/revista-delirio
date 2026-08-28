@@ -623,7 +623,7 @@
 
         fontSize =
           Math.min(
-            28,
+            34,
             fontSize + 2
           );
 
