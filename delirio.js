@@ -227,9 +227,9 @@
     document.querySelectorAll(".mini").forEach(mini => {
 
       mini.innerHTML = `
-        <a href="semanal.html" class="mini-semanal">
+        <a href="quiza.html" class="mini-semanal">
           <img
-            src="imagenes/semanalim.png"
+            src="imagenes/quincenalquiza.png"
             alt="Semanal"
           >
         </a>
