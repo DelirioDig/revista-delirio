@@ -227,10 +227,10 @@
     document.querySelectorAll(".mini").forEach(mini => {
 
       mini.innerHTML = `
-        <a href="quiza.html" class="mini-semanal">
+        <a href="tintero.html" class="mini-semanal">
           <img
-            src="imagenes/quincenalquiza.png"
-            alt="Semanal"
+            src="imagenes/tinteromini.png"
+            alt="Tintero"
           >
         </a>
 
