@@ -2,7 +2,7 @@
 
 :root{
   --fondo:#f8f7f5;
-  --rojo:#830f0d;
+  --rojo:#c14e59;
   --beige:#efe6da;
   --gris:#a6a6a6;
   --negro:#010101;
@@ -641,6 +641,71 @@ a:hover{
 
 .mini-access a:hover{
   color:var(--rojo);
+}
+
+
+/* ============================================================
+   REVISTA DESTACADA
+   ============================================================ */
+
+.revista-destacada{
+  background:#632553;
+
+  display:grid;
+
+  grid-template-columns:190px 1fr;
+
+  gap:28px;
+
+  padding:25px;
+
+  align-items:center;
+}
+
+.revista-portada{
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.revista-portada img{
+  width:155px;
+  height:auto;
+
+  display:block;
+}
+
+.revista-info h2{
+  font:400 42px/1 'Young Serif',serif;
+
+  margin:0 0 18px;
+
+  color:#fff;
+}
+
+.revista-info h3{
+  font:700 27px/1.05 Poppins,sans-serif;
+
+  margin:0 0 22px;
+
+  color:#fff;
+}
+
+.revista-info p{
+  font:400 20px/1.35 'Crimson Pro',serif;
+
+  text-align:left;
+
+  margin:0 0 18px;
+
+  color:#fff;
+}
+
+.revista-info strong{
+  font:700 15px/1.2 Poppins,sans-serif;
+
+  color:#fff;
 }
 
 
