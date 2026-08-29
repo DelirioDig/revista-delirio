@@ -4,18 +4,203 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Delirio: revista digital</title>
+
 <link rel="stylesheet" href="delirio.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================================
+   DIVISIONES DE SECCIÓN — INDEX
+   ============================================================ */
+
+.index-section-title{
+  border-top:2px solid var(--linea);
+  border-bottom:2px solid var(--linea);
+
+  padding:8px 0 7px;
+
+  margin:0 0 25px;
+
+  text-align:center;
+
+  font:400 30px/1 'Young Serif',serif;
+
+  text-transform:uppercase;
+
+  color:var(--texto);
+}
+
+
+/* ============================================================
+   BLOQUE DESTACADO DE REVISTA
+   ============================================================ */
+
+.revista-destacada{
+  display:grid;
+
+  grid-template-columns:190px 1fr;
+
+  background:#632553;
+
+  color:#fff;
+
+  width:100%;
+
+  min-height:390px;
+
+  margin:0 0 30px;
+}
+
+.revista-destacada-cover{
+  display:block;
+
+  width:190px;
+  height:100%;
+
+  object-fit:cover;
+
+  cursor:pointer;
+}
+
+.revista-destacada-text{
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  padding:30px 28px;
+}
+
+.revista-destacada-edicion{
+  font:400 38px/1 'Young Serif',serif;
+
+  margin:0 0 20px;
+}
+
+.revista-destacada-titulo{
+  font:800 29px/1.05 Poppins,sans-serif;
+
+  margin:0 0 25px;
+}
+
+.revista-destacada-descripcion{
+  font:400 21px/1.3 'Crimson Pro',serif;
+
+  margin:0 0 20px;
+
+  text-align:left;
+}
+
+.revista-destacada-creditos{
+  font:700 15px/1.2 Poppins,sans-serif;
+
+  margin:0;
+}
+
+
+/* ============================================================
+   SEPARADOR ANTES DE LOS CUADROS
+   ============================================================ */
+
+.index-cards-divider{
+  border-top:2px solid var(--linea);
+
+  margin:28px 0 25px;
+}
+
+
+/* ============================================================
+   SECCIONES DE POESÍA Y RESEÑA
+   ============================================================ */
+
+.index-entry-columns{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:28px;
+}
+
+.index-entry{
+  padding:0 0 18px;
+
+  margin:0;
+
+  border-bottom:1px solid var(--linea);
+}
+
+.index-entry .title{
+  font:400 23px/1.02 'Crimson Pro',serif;
+
+  margin:0;
+}
+
+.index-entry .title a{
+  display:block;
+}
+
+.index-entry .author{
+  margin-top:12px;
+
+  text-align:right;
+
+  font:700 15px Poppins,sans-serif;
+
+  font-variant:small-caps;
+
+  letter-spacing:.25px;
+}
+
+
+/* ============================================================
+   RESPONSIVE — CONSERVA LA ESTRUCTURA ESCALADA
+   ============================================================ */
+
+@media(max-width:1000px){
+
+  .revista-destacada{
+    grid-template-columns:190px 1fr;
+  }
+
+  .revista-destacada-cover{
+    width:190px;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
+
 <header id="top-banner">
-  <button class="banner-menu" id="menuButton" aria-label="Menú"><span></span><span></span><span></span></button>
-  <a href="index.html"><img class="banner-logo" src="imagenes/LOGOSINFONDO.png" alt="Delirio"></a>
-  <a class="edicion" href="revista.html">EDICIÓN<br>ACTUAL</a>
+
+  <button class="banner-menu" id="menuButton" aria-label="Menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <a href="index.html">
+    <img class="banner-logo" src="imagenes/LOGOSINFONDO.png" alt="Delirio">
+  </a>
+
+  <a class="edicion" href="revista.html">
+    EDICIÓN<br>ACTUAL
+  </a>
+
   <button class="lupa-banner" id="bannerSearch" aria-label="Buscar"></button>
+
 </header>
 
+
 <div class="menu-panel" id="menuPanel">
+
   <button class="menu-close" id="menuClose">×</button>
+
   <nav>
     <a href="index.html">Inicio</a>
     <a class="" href="blog.html">Blog</a>
@@ -24,154 +209,712 @@
     <a href="cine.html">Cine</a>
     <a href="narrativa.html">Narrativa</a>
   </nav>
+
 </div>
+
 
 <div class="page-wrap" id="pageWrap">
+
 <main class="page" id="page">
+
 <div class="banner-space"></div>
 
+
+<!-- ============================================================
+     ENCABEZADO
+     ============================================================ -->
+
 <section class="header">
-  <img class="logo-principal" src="imagenes/LOGOSINFONDO-2.png" alt="Delirio">
+
+  <img
+    class="logo-principal"
+    src="imagenes/LOGOSINFONDO-2.png"
+    alt="Delirio"
+  >
+
   <div class="header-line"></div>
+
   <div class="header-grid">
-    <nav class="nav"><a class="active" href="index.html">Inicio</a><a class="" href="revista.html">Revista</a><a class="" href="poesia.html">Poesía</a><a class="" href="blog.html">Blog</a><a class="" href="cine.html">Cine</a><a class="" href="narrativa.html">Narrativa</a></nav>
+
+    <nav class="nav">
+      <a class="active" href="index.html">Inicio</a>
+      <a class="" href="revista.html">Revista</a>
+      <a class="" href="poesia.html">Poesía</a>
+      <a class="" href="blog.html">Blog</a>
+      <a class="" href="cine.html">Cine</a>
+      <a class="" href="narrativa.html">Narrativa</a>
+    </nav>
+
     <div class="tools">
-      <input class="search" id="searchInput" type="search">
-      <button class="search-button" id="searchButton" aria-label="Buscar"></button>
-      <div class="search-label">Buscar</div>
-      <div class="search-dropdown" id="searchDropdown"></div>
-      <div class="theme"><span>Tema</span><button id="themeButton" aria-label="Cambiar tema">☼</button></div>
-      <div class="date" id="fechaTexto"></div>
+
+      <input
+        class="search"
+        id="searchInput"
+        type="search"
+      >
+
+      <button
+        class="search-button"
+        id="searchButton"
+        aria-label="Buscar"
+      ></button>
+
+      <div class="search-label">
+        Buscar
+      </div>
+
+      <div
+        class="search-dropdown"
+        id="searchDropdown"
+      ></div>
+
+      <div class="theme">
+        <span>Tema</span>
+        <button
+          id="themeButton"
+          aria-label="Cambiar tema"
+        >☼</button>
+      </div>
+
+      <div
+        class="date"
+        id="fechaTexto"
+      ></div>
+
     </div>
+
   </div>
+
   <div class="main-line"></div>
+
 </section>
+
+
+<!-- ============================================================
+     CONTENIDO
+     ============================================================ -->
 
 <section class="content">
-  
+
 <div>
-  <div class="note-columns">
-    <div class="note-column">
-      <article class="note searchable" data-title="Mis pasos se graban ahí" data-author="David Paredes Hernández" data-href="DH_01.html">
-        <h2>AVIARIO</h2>
-        <p class="title"><a href="DH_01.html"><span class="star">★</span>Mis pasos se graban ahí</a></p>
-        <div class="author">David Paredes Hernández</div>
-      </article>
-      <article class="note searchable" data-title="Cinco minutos más" data-author="Amairay Rincón" data-href="AR_01.html">
-        <h2>RED</h2>
-        <p class="title"><a href="AR_01.html"><span class="star">★</span>Cinco minutos más</a></p>
-        <div class="author">Amairay Rincón</div>
-      </article>
-      <article class="note searchable" data-title="Peticiones para vivir sin ti" data-author="Ulises Burgo" data-href="UB_01.html">
-        <h2>MIENTRAS TRATO DE VIVIR</h2>
-        <p class="title"><a href="UB_01.html"><span class="star">★</span>Peticiones para vivir sin ti</a></p>
-        <div class="author">Ulises Burgo</div>
-      </article>
-    </div>
-    <div class="note-column">
-      <article class="note searchable" data-title="¿Dónde se aprende a olvidar?" data-author="Elizabeth Campos" data-href="EC_01.html">
-        <h2>LATIDOS NOCIVOS</h2>
-        <p class="title"><a href="EC_01.html"><span class="star">★</span>¿Dónde se aprende a olvidar?</a></p>
-        <div class="author">Elizabeth Campos</div>
-      </article>
-      <article class="note searchable" data-title="Amar y callar" data-author="Renata Tetlamatzi" data-href="RT_01.html">
-        <h2>BITÁCORA DE CROMO</h2>
-        <p class="title"><a href="RT_01.html"><span class="star">★</span>Amar y callar</a></p>
-        <div class="author">Renata Tetlamatzi</div>
-      </article>
-      <article class="note searchable" data-title="Espejismo" data-author="Meredith Villalba" data-href="MV_01.html">
-        <h2>ORPHÉA</h2>
-        <p class="title"><a href="MV_02.html"><span class="star">★</span>Liminal</a></p>
-        <div class="author">Meredith Villalba</div>
-      </article>
-      <article class="note searchable" data-title="Título de Estante" data-author="Varios autores" data-href="SR_01.html">
-        <h2>ESTANTE</h2>
-        <p class="title"><a href="SR_01.html"><span class="star">★</span>Desorden mental y una pizca de creatividad</a></p>
-        <div class="author">Santiago Riojas</div>
-      </article>
-    </div>
-  </div>
 
-  <section class="recommendation searchable" data-title="Letanía de mis defectos" data-author="Pita Amor" data-href="#">
-    <div class="label">Recomendación</div>
-    <h3>POESÍA PARA HOY</h3>
-    <div class="book">«Letanía de mis defectos»</div>
-    <div class="rec-author">Pita Amor</div>
-  </section>
 
-  <section class="gallery">
-    <h3>Fotografía e ilustración</h3>
-    <div class="gallery-grid">
-      <img src="imagenes/NR-01.png" data-title="Ojos que no se olvidan" data-author="Natalia Regnier" alt="Ojos que no se olvidan">
-      <img src="imagenes/RT-02.jpg" data-title="Desgaste" data-author="Renata Tetlamatzi" alt="Desgaste">
-      <img src="imagenes/RT-01.png" data-title="Confeti de tierra" data-author="Renata Tetlamatzi" alt="Confeti de tierra">
-    </div>
-  </section>
+<!-- ============================================================
+     BLOG
+     ============================================================ -->
 
-  <section class="cards">
-    <a class="card-red" href="https://www.instagram.com/delirio_revista" target="_blank" rel="noopener"><strong>Delirio</strong><span>EN INSTAGRAM</span><span>@Delirio_revista</span></a>
-    <a class="card-black" href="revista.html"><strong>Delirio</strong><span>EDICIÓN DEL MES</span><small>Léela aquí &gt;</small></a>
-  </section>
-
-  <section class="bottom-notes">
-   <article class="note searchable" data-title="Birdie" data-author="Natalia Regnier" data-href="NR_01.html">
-        <h2>POESÍA</h2>
-        <p class="title"><a href="NR_01.html"><span class="star">★</span>Birdie</a></p>
-        <div class="author">Natalia Regnier</div>
-      </article>
-      <article class="note searchable" data-title="Falsa justificación" data-author="Natalia Regnier" data-href="NR_02.html">
-        <h2>RED</h2>
-        <p class="title"><a href="NR_02.html"><span class="star">★</span>Falsa justificación</a></p>
-        <div class="author">Natalia Regnier</div>
-      </article>
-      <article class="note searchable" data-title="«Los siete maridos de Evelyn Hugo» de Taylor Jenkins Reid" data-author="Natalia Regnier" data-href="NR.RES1.html">
-        <h2>RESEÑA</h2>
-        <p class="title"><a href="NR.RES1.html"><span class="star">★</span>«Los siete maridos de Evelyn Hugo» de Taylor Jenkins Reid</a></p>
-        <div class="author">Natalia Regnier</div>
-      </article>
-      <article class="note searchable" data-title="«Emilia Pérez» y el arte de tomar malas decisiones" data-author="Meredith Villalba" data-href="MV.RES1.html">
-        <h2>RESEÑA</h2>
-        <p class="title"><a href="MV.RES1.html"><span class="star">★</span>«Emilia Pérez» y el arte de tomar malas decisiones</a></p>
-        <div class="author">Meredith Villalba</div>
-    </article>
-  </section>
+<div class="index-section-title">
+  BLOG
 </div>
 
-  <aside class="mini">
-    <img class="cover" src="imagenes/PORTADA-AGO.png" alt="Portada de agosto">
-    <h3 class="mini-title">AGOSTO 2026</h3>
-    <a class="mini-box mini-link" href="SR_01.html">
-      <h3>COLABORACIÓN</h3>
-      <p><span class="star">★</span>Desorden mental y una pizca de creatividad</p>
-      <div class="mini-author">Santiago Riojas</div>
-    </a>
-    <a class="instagram" href="https://www.instagram.com/delirio_revista" target="_blank" rel="noopener"><strong>Delirio</strong><span>EN INSTAGRAM</span><span>@Delirio_revista</span></a>
-    <a class="mini-box mini-link" href="NR_01.html">
-      <h3><em>Birdie</em></h3>
-      <p>Si vuelves, si me buscas, si regresas, no importa cuando, ni como, dime donde, que solo quiero eso. Yo dejaré que me encuentres. Casi no le tengo miedo a nada; pero nunca dejar de sentir esto me tiene aterrada. Sé que mereces el amor que yo te ofrezco, pero yo, no merezco el fallido intento de amor que te agradezco; aún así vuelve, que siento que me ahogo.</p>
-      <div class="mini-author">Natalia Regnier</div>
-    </a>
-    <div class="ad">ANUNCIO</div>
-    <div class="birthday"><div class="day">+100</div><div class="month">DIAS</div><div class="name">DELIRIO</div><small>REVISTA<br>DIGITAL</small></div>
-    <div class="mini-access"><a href="autores.html">AUTORES</a><a href="agregar-entrada.html">REVISIÓN</a></div>
-  </aside>
+
+<div class="note-columns">
+
+  <div class="note-column">
+
+    <article
+      class="note searchable"
+      data-title="Mis pasos se graban ahí"
+      data-author="David Paredes Hernández"
+      data-href="DH_01.html"
+    >
+      <h2>AVIARIO</h2>
+
+      <p class="title">
+        <a href="DH_01.html">
+          <span class="star">★</span>Mis pasos se graban ahí
+        </a>
+      </p>
+
+      <div class="author">
+        David Paredes Hernández
+      </div>
+    </article>
+
+
+    <article
+      class="note searchable"
+      data-title="Cinco minutos más"
+      data-author="Amairay Rincón"
+      data-href="AR_01.html"
+    >
+      <h2>RED</h2>
+
+      <p class="title">
+        <a href="AR_01.html">
+          <span class="star">★</span>Cinco minutos más
+        </a>
+      </p>
+
+      <div class="author">
+        Amairay Rincón
+      </div>
+    </article>
+
+
+    <article
+      class="note searchable"
+      data-title="Peticiones para vivir sin ti"
+      data-author="Ulises Burgo"
+      data-href="UB_01.html"
+    >
+      <h2>MIENTRAS TRATO DE VIVIR</h2>
+
+      <p class="title">
+        <a href="UB_01.html">
+          <span class="star">★</span>Peticiones para vivir sin ti
+        </a>
+      </p>
+
+      <div class="author">
+        Ulises Burgo
+      </div>
+    </article>
+
+  </div>
+
+
+  <div class="note-column">
+
+    <article
+      class="note searchable"
+      data-title="¿Dónde se aprende a olvidar?"
+      data-author="Elizabeth Campos"
+      data-href="EC_01.html"
+    >
+      <h2>LATIDOS NOCIVOS</h2>
+
+      <p class="title">
+        <a href="EC_01.html">
+          <span class="star">★</span>¿Dónde se aprende a olvidar?
+        </a>
+      </p>
+
+      <div class="author">
+        Elizabeth Campos
+      </div>
+    </article>
+
+
+    <article
+      class="note searchable"
+      data-title="Amar y callar"
+      data-author="Renata Tetlamatzi"
+      data-href="RT_01.html"
+    >
+      <h2>BITÁCORA DE CROMO</h2>
+
+      <p class="title">
+        <a href="RT_01.html">
+          <span class="star">★</span>Amar y callar
+        </a>
+      </p>
+
+      <div class="author">
+        Renata Tetlamatzi
+      </div>
+    </article>
+
+
+    <article
+      class="note searchable"
+      data-title="Liminal"
+      data-author="Meredith Villalba"
+      data-href="MV_02.html"
+    >
+      <h2>ORPHÉA</h2>
+
+      <p class="title">
+        <a href="MV_02.html">
+          <span class="star">★</span>Liminal
+        </a>
+      </p>
+
+      <div class="author">
+        Meredith Villalba
+      </div>
+    </article>
+
+
+    <article
+      class="note searchable"
+      data-title="Desorden mental y una pizca de creatividad"
+      data-author="Santiago Riojas"
+      data-href="SR_01.html"
+    >
+      <h2>ESTANTE</h2>
+
+      <p class="title">
+        <a href="SR_01.html">
+          <span class="star">★</span>Desorden mental y una pizca de creatividad
+        </a>
+      </p>
+
+      <div class="author">
+        Santiago Riojas
+      </div>
+    </article>
+
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     REVISTA
+     ============================================================ -->
+
+<div
+  class="index-section-title"
+  style="margin-top:30px;"
+>
+  REVISTA
+</div>
+
+
+<a
+  href="revista.html"
+  class="revista-destacada"
+>
+
+  <img
+    class="revista-destacada-cover"
+    src="imagenes/PORTADA-AGO.png"
+    alt="Portada de agosto"
+  >
+
+  <div class="revista-destacada-text">
+
+    <div class="revista-destacada-edicion">
+      AGOSTO 2026
+    </div>
+
+    <div class="revista-destacada-titulo">
+      Ojos que no se olvidan
+    </div>
+
+    <p class="revista-destacada-descripcion">
+      En esta ocasión recordamos una de las cosas que menos se olvidan y, a la vez, una de las que más quisiéramos olvidar: uno de esos recuerdos que inevitablemente siempre encuentra la forma de aparecer en nuestra mente: los ojos.
+    </p>
+
+    <p class="revista-destacada-creditos">
+      Ilustración de la portada: Natalia Regnier
+    </p>
+
+  </div>
+
+</a>
+
+
+<!-- ============================================================
+     POESÍA PARA HOY
+     ============================================================ -->
+
+<section class="recommendation searchable"
+  data-title="Letanía de mis defectos"
+  data-author="Pita Amor"
+  data-href="#"
+>
+
+  <div class="label">
+    Recomendación
+  </div>
+
+  <h3>
+    POESÍA PARA HOY
+  </h3>
+
+  <div class="book">
+    «Letanía de mis defectos»
+  </div>
+
+  <div class="rec-author">
+    Pita Amor
+  </div>
+
 </section>
 
 
-<div class="gallery-modal" id="galleryModal">
-  <div class="gallery-modal-inner">
-    <button class="close" id="galleryClose" aria-label="Cerrar">×</button>
-    <img id="galleryModalImage" src="" alt="">
-    <div class="gallery-caption" id="galleryCaption"></div>
-  </div>
+<!-- ============================================================
+     FOTOGRAFÍA E ILUSTRACIÓN
+     ============================================================ -->
+
+<div
+  class="index-section-title"
+  style="margin-top:30px;"
+>
+  FOTOGRAFÍA E ILUSTRACIÓN
 </div>
+
+
+<section class="gallery">
+
+  <div class="gallery-grid">
+
+    <img
+      src="imagenes/NR-01.png"
+      data-title="Ojos que no se olvidan"
+      data-author="Natalia Regnier"
+      alt="Ojos que no se olvidan"
+    >
+
+    <img
+      src="imagenes/RT-02.jpg"
+      data-title="Desgaste"
+      data-author="Renata Tetlamatzi"
+      alt="Desgaste"
+    >
+
+    <img
+      src="imagenes/RT-01.png"
+      data-title="Confeti de tierra"
+      data-author="Renata Tetlamatzi"
+      alt="Confeti de tierra"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     LÍNEA + CUADROS
+     ============================================================ -->
+
+<div class="index-cards-divider"></div>
+
+
+<section class="cards">
+
+  <a
+    class="card-red"
+    href="https://www.instagram.com/delirio_revista"
+    target="_blank"
+    rel="noopener"
+  >
+    <strong>Delirio</strong>
+    <span>EN INSTAGRAM</span>
+    <span>@Delirio_revista</span>
+  </a>
+
+
+  <a
+    class="card-black"
+    href="revista.html"
+  >
+    <strong>Delirio</strong>
+    <span>EDICIÓN DEL MES</span>
+    <small>Léela aquí &gt;</small>
+  </a>
+
+</section>
+
+
+<!-- ============================================================
+     POESÍA
+     ============================================================ -->
+
+<div
+  class="index-section-title"
+  style="margin-top:30px;"
+>
+  POESÍA
+</div>
+
+
+<div class="index-entry-columns">
+
+  <article class="index-entry searchable"
+    data-title="Falsa justificación"
+    data-author="Natalia Regnier"
+    data-href="NR_02.html"
+  >
+
+    <p class="title">
+      <a href="NR_02.html">
+        <span class="star">★</span>Falsa justificación
+      </a>
+    </p>
+
+    <div class="author">
+      Natalia Regnier
+    </div>
+
+  </article>
+
+
+  <article class="index-entry searchable"
+    data-title="Birdie"
+    data-author="Natalia Regnier"
+    data-href="NR_01.html"
+  >
+
+    <p class="title">
+      <a href="NR_01.html">
+        <span class="star">★</span>Birdie
+      </a>
+    </p>
+
+    <div class="author">
+      Natalia Regnier
+    </div>
+
+  </article>
+
+</div>
+
+
+<!-- ============================================================
+     RESEÑA
+     ============================================================ -->
+
+<div
+  class="index-section-title"
+  style="margin-top:30px;"
+>
+  RESEÑA
+</div>
+
+
+<div class="index-entry-columns">
+
+  <article class="index-entry searchable"
+    data-title="«Emilia Pérez» y el arte de tomar malas decisiones"
+    data-author="Meredith Villalba"
+    data-href="MV.RES1.html"
+  >
+
+    <p class="title">
+      <a href="MV.RES1.html">
+        <span class="star">★</span>«Emilia Pérez» y el arte de tomar malas decisiones
+      </a>
+    </p>
+
+    <div class="author">
+      Meredith Villalba
+    </div>
+
+  </article>
+
+
+  <article class="index-entry searchable"
+    data-title«El color de las cosas invisibles» de Andrea Longarela
+    data-author="Renata Tetlamatzi"
+    data-href="RT.RES1.html"
+  >
+
+    <p class="title">
+      <a href="RT.RES1.html">
+        <span class="star">★</span>«El color de las cosas invisibles» de Andrea Longarela
+      </a>
+    </p>
+
+    <div class="author">
+      Renata Tetlamatzi
+    </div>
+
+  </article>
+
+</div>
+
+
+</div>
+
+
+<!-- ============================================================
+     COLUMNA MINI
+     ============================================================ -->
+
+<aside class="mini">
+
+  <img
+    class="cover"
+    src="imagenes/PORTADA-AGO.png"
+    alt="Portada de agosto"
+  >
+
+
+  <h3 class="mini-title">
+    AGOSTO 2026
+  </h3>
+
+
+  <a
+    class="mini-box mini-link"
+    href="SR_01.html"
+  >
+
+    <h3>
+      COLABORACIÓN
+    </h3>
+
+    <p>
+      <span class="star">★</span>Desorden mental y una pizca de creatividad
+    </p>
+
+    <div class="mini-author">
+      Santiago Riojas
+    </div>
+
+  </a>
+
+
+  <a
+    class="instagram"
+    href="https://www.instagram.com/delirio_revista"
+    target="_blank"
+    rel="noopener"
+  >
+
+    <strong>
+      Delirio
+    </strong>
+
+    <span>
+      EN INSTAGRAM
+    </span>
+
+    <span>
+      @Delirio_revista
+    </span>
+
+  </a>
+
+
+  <a
+    class="mini-box mini-link"
+    href="NR_01.html"
+  >
+
+    <h3>
+      <em>Birdie</em>
+    </h3>
+
+    <p>
+      Si vuelves, si me buscas, si regresas, no importa cuando, ni como, dime donde, que solo quiero eso. Yo dejaré que me encuentres. Casi no le tengo miedo a nada; pero nunca dejar de sentir esto me tiene aterrada. Sé que mereces el amor que yo te ofrezco, pero yo, no merezco el fallido intento de amor que te agradezco; aún así vuelve, que siento que me ahogo.
+    </p>
+
+    <div class="mini-author">
+      Natalia Regnier
+    </div>
+
+  </a>
+
+
+  <div class="ad">
+    ANUNCIO
+  </div>
+
+
+  <div class="birthday">
+
+    <div class="day">
+      +100
+    </div>
+
+    <div class="month">
+      DIAS
+    </div>
+
+    <div class="name">
+      DELIRIO
+    </div>
+
+    <small>
+      REVISTA<br>DIGITAL
+    </small>
+
+  </div>
+
+
+  <div class="mini-access">
+
+    <a href="autores.html">
+      AUTORES
+    </a>
+
+    <a href="agregar-entrada.html">
+      REVISIÓN
+    </a>
+
+  </div>
+
+</aside>
+
+</section>
+
+
+<!-- ============================================================
+     MODAL GALERÍA
+     ============================================================ -->
+
+<div
+  class="gallery-modal"
+  id="galleryModal"
+>
+
+  <div class="gallery-modal-inner">
+
+    <button
+      class="close"
+      id="galleryClose"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+    <img
+      id="galleryModalImage"
+      src=""
+      alt=""
+    >
+
+    <div
+      class="gallery-caption"
+      id="galleryCaption"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+
 <footer class="footer">
-  <div class="footer-instagram">◎</div>
-  <div class="footer-links"><a href="blog.html">Blog</a><a href="revista.html">Revista</a><a href="poesia.html">Poesía</a></div>
-  <img class="footer-logo" src="imagenes/LOGOSINFONDO.png" alt="Delirio">
-  <div class="footer-text">Revista mensual digital para sentir y crear mientras se documenta la vida.<br>Creada en abril de 2026.</div>
+
+  <div class="footer-instagram">
+    ◎
+  </div>
+
+  <div class="footer-links">
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+  </div>
+
+  <img
+    class="footer-logo"
+    src="imagenes/LOGOSINFONDO.png"
+    alt="Delirio"
+  >
+
+  <div class="footer-text">
+    Revista mensual digital para sentir y crear mientras se documenta la vida.<br>
+    Creada en abril de 2026.
+  </div>
+
 </footer>
-</main></div>
+
+
+</main>
+
+</div>
+
+
 <script src="delirio.js"></script>
+
 </body>
 </html>
