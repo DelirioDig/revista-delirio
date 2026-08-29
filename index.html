@@ -40,7 +40,7 @@
 .revista-destacada{
   display:grid;
 
-  grid-template-columns:190px 1fr;
+  grid-template-columns:180px 1fr;
 
   background:#632553;
 
@@ -48,7 +48,7 @@
 
   width:100%;
 
-  min-height:390px;
+  min-height:350px;
 
   margin:0 0 30px;
 }
@@ -56,12 +56,15 @@
 .revista-destacada-cover{
   display:block;
 
-  width:190px;
-  height:100%;
+  width:140px;
+  height:auto;
 
-  object-fit:cover;
+  object-fit:contain;
 
   cursor:pointer;
+
+  align-self:center;
+  justify-self:center;
 }
 
 .revista-destacada-text{
@@ -75,19 +78,19 @@
 }
 
 .revista-destacada-edicion{
-  font:400 38px/1 'Young Serif',serif;
+  font:400 33px/1 'Young Serif',serif;
 
   margin:0 0 20px;
 }
 
 .revista-destacada-titulo{
-  font:800 29px/1.05 Poppins,sans-serif;
+  font:800 24px/1.05 Poppins,sans-serif;
 
   margin:0 0 25px;
 }
 
 .revista-destacada-descripcion{
-  font:400 21px/1.3 'Crimson Pro',serif;
+  font:400 17px/1.3 'Crimson Pro',serif;
 
   margin:0 0 20px;
 
@@ -95,7 +98,7 @@
 }
 
 .revista-destacada-creditos{
-  font:700 15px/1.2 Poppins,sans-serif;
+  font:700 12px/1.2 Poppins,sans-serif;
 
   margin:0;
 }
