@@ -229,7 +229,7 @@
       mini.innerHTML = `
         <a href="tintero.html" class="mini-semanal">
           <img
-            src="imagenes/tinteromini.png"
+            src="imagenes/tinteromini2.png"
             alt="Tintero"
           >
         </a>
