@@ -344,8 +344,7 @@
   }
 
   if(
-    localStorage.getItem("delirio-tema")
-    === "dark"
+    localStorage.getItem("delirio-tema") !== "light"
   ){
 
     document.body.classList.add("dark");
