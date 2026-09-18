@@ -886,6 +886,14 @@ a:hover{
   font:14px 'Crimson Pro',serif;
 }
 
+.card-red img,
+.card-black img{
+  width:90px;
+  height:auto;
+  display:block;
+  margin-bottom:12px;
+}
+
 
 /* ============================================================
    NOTAS INFERIORES
