@@ -1174,19 +1174,16 @@ a:hover{
 }
 
 .blog-entry-head .blog-author{
-  font:700 16px Poppins,sans-serif;
-
+  margin:0;
+  text-align:left;
+  font:800 15px/1 Poppins,sans-serif;
   font-variant:small-caps;
-
-  margin-top:8px;
 }
 
 .blog-entry-title{
-  font:400 25px/1.02 'Young Serif',serif;
-
+  margin:0 0 6px;
   text-align:left;
-
-  margin:12px 0 20px;
+  font:400 34px/1.05 'Young Serif',serif;
 }
 
 /* La estrella permanece en estilo normal */
