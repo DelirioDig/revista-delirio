@@ -251,17 +251,25 @@ a:hover{
 
 .header-grid{
   display:grid;
-  grid-template-columns:1fr 330px;
-  gap:25px;
-  align-items:start;
-}
-
-.nav{
-  display:grid;
-  grid-template-columns:repeat(3,max-content);
-  grid-auto-rows:34px;
+  grid-template-columns:max-content max-content minmax(250px,1fr);
+  grid-template-rows:auto auto auto;
   column-gap:48px;
   row-gap:3px;
+  align-items:center;
+
+.nav{
+  grid-column:1 / 3;
+  grid-row:1 / 4;
+
+  display:grid;
+
+  grid-template-columns:max-content max-content;
+  grid-template-rows:auto auto auto;
+
+  column-gap:48px;
+  row-gap:3px;
+
+  align-items:center;
 }
 
 .nav a{
@@ -276,7 +284,10 @@ a:hover{
 }
 
 .tools{
-  position:relative;
+   position:relative;
+
+  grid-column:3;
+  grid-row:1 / 4;
 
   display:grid;
 
@@ -284,6 +295,32 @@ a:hover{
   grid-template-rows:38px 28px 42px;
 
   column-gap:10px;
+
+  align-items:center;
+}
+
+  .tools .search{
+  grid-column:1;
+  grid-row:1;
+}
+
+.tools .search-button{
+  grid-column:2;
+  grid-row:1;
+}
+
+.tools .search-label{
+  display:none;
+}
+
+.tools .theme{
+  grid-column:1 / 3;
+  grid-row:2;
+}
+
+.tools .date{
+  grid-column:1 / 3;
+  grid-row:3;
 }
 
 .search{
