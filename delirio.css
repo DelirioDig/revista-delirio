@@ -888,10 +888,12 @@ a:hover{
 
 .card-red img,
 .card-black img{
-  width:90px;
-  height:auto;
+  width:60px !important;
+  max-width:60px !important;
+  height:auto !important;
   display:block;
-  margin-bottom:12px;
+  margin:0 auto 10px;
+  flex-shrink:0;
 }
 
 
