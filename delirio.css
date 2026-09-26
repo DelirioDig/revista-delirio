@@ -493,8 +493,6 @@ a:hover{
 
   font:700 15px Poppins,sans-serif;
 
-  font-variant:small-caps;
-
   letter-spacing:.25px;
 }
 
@@ -578,7 +576,6 @@ a:hover{
 
   font:700 11px Poppins,sans-serif;
 
-  font-variant:small-caps;
 }
 
 .instagram{
@@ -1225,7 +1222,6 @@ a:hover{
   margin:0;
   text-align:left;
   font:800 15px/1 Poppins,sans-serif;
-  font-variant:small-caps;
 }
 
 .blog-entry-title{
