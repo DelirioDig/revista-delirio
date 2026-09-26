@@ -1533,6 +1533,75 @@ body.dark .button{
   font:14px Poppins,sans-serif;
 }
 
+/* ---------- EDITOR DE AUTORES: NEGRITA Y CURSIVA ---------- */
+
+.editor-toolbar{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+}
+
+.format-button{
+  width:38px;
+  height:34px;
+
+  border:1px solid var(--linea);
+
+  background:transparent;
+  color:var(--texto);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0;
+
+  font:800 16px Poppins,sans-serif;
+
+  cursor:pointer;
+}
+
+.format-button:hover{
+  background:var(--beige);
+}
+
+.format-button:focus-visible{
+  outline:2px solid var(--rojo);
+  outline-offset:2px;
+}
+
+.content-editor{
+  width:100%;
+  min-height:320px;
+
+  border:1px solid var(--linea);
+
+  background:transparent;
+  color:var(--texto);
+
+  padding:10px;
+
+  font:16px/1.2 'Crimson Pro',serif;
+
+  outline:none;
+
+  overflow-y:auto;
+}
+
+.content-editor:focus{
+  outline:1px solid var(--linea);
+  outline-offset:-1px;
+}
+
+.content-editor strong{
+  font-weight:700;
+}
+
+.content-editor em{
+  font-style:italic;
+}
+
 .review-table{
   width:100%;
 
@@ -2024,12 +2093,12 @@ body.dark{
   .section-entry-author{margin-top:auto;padding-top:10px;font-size:11px;}
   .section-entry-author::first-letter{font-size:1.35em;}
 
-  /* Revista: somente o leitor em celular */
+  /* Revista: somente o lector em celular */
   .revista-main{width:100%;}
   .revista-main ~ .mini{display:none !important;}
   .reader{width:100%;overflow:hidden;}
 
-  /* MINI abaixo de tudo */
+  /* MINI abajo de todo */
   .mini{gap:13px;}
   .mini-semanal img{width:100%;height:auto;}
   .cover{width:100%;height:auto;}
