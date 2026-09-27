@@ -1180,7 +1180,7 @@ a:hover{
 }
 
 .blog-link-card h2{
-  font:900 29px/1.02 Playfair Display,serif;
+  font:900 29px/1.02 'Young Serif',serif;
 
   color:var(--rojo);
 
@@ -1193,8 +1193,6 @@ a:hover{
   text-align:right;
 
   font:700 13px Poppins,sans-serif;
-
-  font-variant:small-caps;
 }
 
 
