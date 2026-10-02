@@ -491,7 +491,7 @@ a:hover{
 
   text-align:right;
 
-  font:700 15px Poppins,sans-serif;
+  font:500 15px Cairo,sans-serif;
 
   letter-spacing:.25px;
 }
@@ -574,7 +574,7 @@ a:hover{
 
   margin-top:8px;
 
-  font:700 11px Poppins,sans-serif;
+  font:500 11px Cairo,sans-serif;
 
 }
 
@@ -593,7 +593,7 @@ a:hover{
 .instagram strong{
   display:block;
 
-  font:italic 900 30px 'DM Serif Display',serif;
+  font:italic 900 30px 'Young Serif',serif;
 }
 
 .instagram span{
@@ -1192,7 +1192,7 @@ a:hover{
 
   text-align:right;
 
-  font:700 13px Poppins,sans-serif;
+  font:500 13px Cairo,sans-serif;
 }
 
 
@@ -1219,7 +1219,7 @@ a:hover{
 .blog-entry-head .blog-author{
   margin:0;
   text-align:left;
-  font:800 15px/1 Poppins,sans-serif;
+  font:500 15px/1 Cairo,sans-serif;
 }
 
 .blog-entry-title{
@@ -1790,9 +1790,8 @@ body.dark .button{
 
   margin-top:10px;
 
-  font:700 12px Poppins,sans-serif;
+  font:500 12px Cairo,sans-serif;
 
-  font-variant:small-caps;
 }
 
 .reader{
@@ -1914,7 +1913,7 @@ body.dark{
   .note h2{font:900 21px/1.02 'Playfair Display',serif;color:var(--rojo);margin:0 0 10px;}
   .note .title{font:600 21px/1.12 Poppins,sans-serif;margin:0;}
   .note .title a{display:block;}
-  .note .author{margin-top:auto;padding-top:12px;text-align:right;font:700 13px Poppins,sans-serif;font-variant:small-caps;}
+  .note .author{margin-top:auto;padding-top:12px;text-align:right;font:500 13px Cairo,sans-serif;}
   .note-profile{
     width:110px;height:110px;object-fit:cover;border-radius:0;display:block;
     margin:8px auto 14px;border:1px solid var(--linea);
@@ -1927,17 +1926,15 @@ body.dark{
   }
   .blog-link-card .blog-card-image{width:105px;height:105px;object-fit:cover;display:block;border:1px solid var(--linea);grid-row:1 / span 2;}
   .blog-link-card h2{font:900 27px/1.03 'Playfair Display',serif;color:var(--rojo);margin:0;}
-  .blog-link-card .blog-author{margin-top:auto;padding-top:12px;text-align:right;font:700 13px Poppins,sans-serif;font-variant:small-caps;}
-  .blog-link-card .blog-author::first-letter{font-size:1.35em;}
+  .blog-link-card .blog-author{margin-top:auto;padding-top:12px;text-align:right;font:500 13px Cairo,sans-serif;}
 
   .article-main{min-width:0;}
   .blog-entry-head{padding:10px 8px 16px;border-bottom:1px solid var(--linea);}
   .blog-entry-head .blog-name{font:900 34px/1 'Playfair Display',serif;color:var(--rojo);text-transform:uppercase;}
-  .blog-entry-head .blog-author{font:700 15px Poppins,sans-serif;font-variant:small-caps;margin-top:7px;}
-  .blog-entry-head .blog-author::first-letter{font-size:1.35em;}
+  .blog-entry-head .blog-author{font:500 15px Cairo,sans-serif;margin-top:7px;}
   .blog-entry-title{font:400 30px/1.08 'Young Serif',serif;text-align:center;margin:16px 0 5px;}
   .blog-entry-title .star{color:var(--rojo);font-style:normal;}
-  .article-date{font:600 14px Poppins,sans-serif;text-align:right;margin-top:8px;}
+  .article-date{font:500 14px Cairo,sans-serif;text-align:right;margin-top:8px;}
   .article-text{font:400 19px/1.34 'Crimson Pro',serif;text-align:left;margin-top:14px;}
   .article-text p{margin:0 0 18px;}
 
@@ -1950,8 +1947,7 @@ body.dark{
   .section-entry{border:1px solid var(--linea);padding:16px;margin:0;min-height:170px;display:flex;flex-direction:column;}
   .section-entry-type{font:800 11px Poppins,sans-serif;text-transform:uppercase;color:var(--rojo);margin-bottom:8px;}
   .section-entry h2{font:600 22px/1.12 Poppins,sans-serif;margin:0;}
-  .section-entry-author{margin-top:auto;padding-top:12px;text-align:right;font:700 13px Poppins,sans-serif;font-variant:small-caps;}
-  .section-entry-author::first-letter{font-size:1.35em;}
+  .section-entry-author{margin-top:auto;padding-top:12px;text-align:right;font:500 13px Cairo,sans-serif;}
 
   .revista-destacada{grid-template-columns:180px 1fr;min-height:350px;padding:0;}
   .revista-destacada-cover{width:140px;max-height:295px;object-fit:contain;align-self:center;justify-self:center;}
@@ -2025,8 +2021,7 @@ body.dark{
   .note h2{font:900 18px/1.02 'Playfair Display',serif;margin:0 0 8px;color:var(--rojo);}
   .note-profile{width:82px;height:82px;margin:7px auto 10px;object-fit:cover;border:1px solid var(--linea);}
   .note .title{font:600 15px/1.15 Poppins,sans-serif;margin:0;text-align:left;}
-  .note .author{margin-top:auto;padding-top:10px;text-align:right;font:700 11px Poppins,sans-serif;font-variant:small-caps;}
-  .note .author::first-letter{font-size:1.35em;}
+  .note .author{margin-top:auto;padding-top:10px;text-align:left;font:500 11px Cairo,sans-serif;}
 
   .index-section-title{font:400 22px/1 'Young Serif',serif;padding:7px 0 6px;margin:24px 0 18px;}
   .revista-destacada{display:grid;grid-template-columns:110px 1fr;min-height:260px;gap:12px;padding:18px;}
@@ -2054,18 +2049,16 @@ body.dark{
   }
   .blog-link-card .blog-card-image{width:86px;height:86px;object-fit:cover;grid-row:1 / span 2;border:1px solid var(--linea);}
   .blog-link-card h2{font:900 22px/1.02 'Playfair Display',serif;color:var(--rojo);margin:0;}
-  .blog-link-card .blog-author{margin-top:auto;padding-top:8px;text-align:right;font:700 11px Poppins,sans-serif;font-variant:small-caps;}
-  .blog-link-card .blog-author::first-letter{font-size:1.35em;}
+  .blog-link-card .blog-author{margin-top:auto;padding-top:8px;text-align:left;font:500 11px Cairo,sans-serif;}
 
   /* Entradas individuales: una sola columna; MINI baja después de comentarios */
   .breadcrumb{font-size:10px;padding:6px 0;margin-bottom:14px;}
   .blog-entry-head{padding:5px 0 12px;}
   .blog-entry-head .blog-name{font:900 27px/1 'Playfair Display',serif;color:var(--rojo);text-transform:uppercase;}
-  .blog-entry-head .blog-author{font:700 12px Poppins,sans-serif;font-variant:small-caps;margin-top:6px;}
-  .blog-entry-head .blog-author::first-letter{font-size:1.35em;}
+  .blog-entry-head .blog-author{font:700 12px Cairo,sans-serif;margin-top:6px;}
   .blog-entry-title{font:400 23px/1.08 'Young Serif',serif;text-align:center;margin:13px 0 5px;}
   .article-title-row{display:block;}
-  .article-date{font:600 11px Poppins,sans-serif;text-align:right;margin-top:7px;}
+  .article-date{font:500 11px Cairo,sans-serif;text-align:right;margin-top:7px;}
   .font-tools{font-size:10px;gap:6px;padding-top:8px;}
   .font-tools button{font-size:12px;padding:3px 8px;}
   .article-text{font:400 18px/1.35 'Crimson Pro',serif;text-align:left;margin-top:12px;}
@@ -2171,7 +2164,7 @@ body.dark{
   margin-top:auto;
   padding-top:16px;
   text-align:right;
-  font:500 13px Poppins,sans-serif;
+  font:500 13px Cairo,sans-serif;
 }
 
 /* ---------- ENTRADA INDIVIDUAL ---------- */
@@ -2241,8 +2234,7 @@ body.dark{
 .blog-entry-head .blog-author{
   margin:0;
   text-align:right;
-  font:800 15px/1 Poppins,sans-serif;
-  font-variant:small-caps;
+  font:500 15px/1 Cairo,sans-serif;
 }
 
 .entry-meta-row{
@@ -2271,14 +2263,14 @@ body.dark{
 }
 
 .entry-meta-row .share-status{
-  font:500 11px Poppins,sans-serif;
+  font:500 11px Cairo,sans-serif;
 }
 
 .entry-meta-row .article-date{
   margin:0;
   text-align:right;
   white-space:nowrap;
-  font:700 15px/1 Poppins,sans-serif;
+  font:500 15px/1 Cairo,sans-serif;
 }
 
 .article-title-row{display:none;}
@@ -2328,9 +2320,8 @@ body.dark{
 .index-entry .author{
   margin-top:auto;
   padding-top:12px;
-  text-align:right;
-  font:700 13px Poppins,sans-serif;
-  font-variant:small-caps;
+  text-align:left;
+  font:500 13px Cairo,sans-serif;
 }
 
 .index-entry .star{color:var(--rojo);}
@@ -2980,17 +2971,4 @@ body:has(.logo-principal) .header{padding-top:24px;}
     padding:11px !important;
   }
   .revista-destacada-cover{width:66px !important;max-height:165px !important;}
-}
-
-/* ============================================================
-   TIPOGRAFÍA GLOBAL DE AUTORES — LATO
-   ============================================================ */
-
-.author,
-.mini-author,
-.rec-author,
-.blog-author,
-.section-entry-author,
-.sideauthor {
-  font-family: 'Lato', sans-serif !important;
 }
