@@ -780,7 +780,7 @@ a:hover{
 .recommendation .rec-author{
   font:700 14px Poppins,sans-serif;
 
-  font-variant:small-caps;
+  font-variant:normal;
 
   margin-top:4px;
 }
@@ -1417,7 +1417,7 @@ body.dark .button{
 
   font:700 10px Poppins,sans-serif;
 
-  font-variant:small-caps;
+  font-variant:normal;
 
   margin-top:7px;
 }
@@ -2579,7 +2579,7 @@ body:has(.logo-principal) .header{padding-top:24px;}
   padding:0 !important;
   text-align:right !important;
   font:700 15px/1.2 Poppins,sans-serif !important;
-  font-variant:small-caps;
+  font-variant:normal;
 }
 .note .card-date{
   display:block;
@@ -2629,7 +2629,7 @@ body:has(.logo-principal) .header{padding-top:24px;}
   padding:0 !important;
   text-align:left !important;
   font:700 17px/1.2 Poppins,sans-serif !important;
-  font-variant:small-caps;
+  font-variant:normal;
 }
 .blog-link-card .blog-author::first-letter{font-size:1.25em;}
 
@@ -2735,7 +2735,7 @@ body:has(.logo-principal) .header{padding-top:24px;}
   padding:0 !important;
   text-align:right !important;
   font:700 14px/1.2 Poppins,sans-serif !important;
-  font-variant:small-caps;
+  font-variant:normal;
 }
 .index-entry .card-date{
   grid-column:2;
@@ -2971,4 +2971,643 @@ body:has(.logo-principal) .header{padding-top:24px;}
     padding:11px !important;
   }
   .revista-destacada-cover{width:66px !important;max-height:165px !important;}
+}
+
+
+/* ============================================================
+   ACTUALIZACIÓN FINAL — AUTORES, ENLACES Y MENÚ GLOBAL
+   ============================================================ */
+
+/* Todos los nombres de autor: Cairo 600, sin small caps */
+.author,
+.blog-author,
+.section-entry-author,
+.mini-author,
+.sideauthor,
+.rec-author,
+.note .author,
+.index-entry .author,
+.blog-link-card .blog-author,
+.blog-post-date{
+  font-family:'Cairo',sans-serif !important;
+  font-weight:600 !important;
+  font-variant:normal !important;
+  font-variant-caps:normal !important;
+  text-transform:none !important;
+  letter-spacing:0 !important;
+}
+
+/* El autor del enlace reciente de BLOG en INDEX queda a la izquierda */
+.note .author{
+  text-align:left !important;
+}
+
+/* Encabezados de sección: rectángulo rojo, sin navegación interna */
+.header{
+  padding:24px 52px 24px !important;
+}
+.header-grid,
+.header-line,
+.header .main-line{
+  display:none !important;
+}
+.section-heading{
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  min-height:112px;
+  margin:0 !important;
+  padding:20px 28px;
+  background:var(--rojo);
+  color:#fff !important;
+  font:400 46px/1 'Young Serif',serif !important;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+/* ============================================================
+   MENÚ NUEVO
+   ============================================================ */
+.menu-panel{
+  position:fixed !important;
+  z-index:2000 !important;
+  top:0 !important;
+  left:0 !important;
+  inset:auto !important;
+  width:430px !important;
+  height:100vh !important;
+  max-height:100vh;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background:#404040 !important;
+  color:#fff !important;
+  display:none !important;
+  align-items:stretch !important;
+  justify-content:flex-start !important;
+  padding:28px 34px 35px !important;
+  box-shadow:8px 0 30px rgba(0,0,0,.28);
+}
+.menu-panel.open{
+  display:block !important;
+}
+.menu-panel-inner{
+  width:100%;
+}
+.menu-close{
+  position:absolute !important;
+  top:18px !important;
+  right:22px !important;
+  color:#fff !important;
+  background:transparent !important;
+  border:0 !important;
+  font:400 34px/1 Arial,sans-serif !important;
+  cursor:pointer;
+  padding:0 !important;
+}
+.menu-date{
+  margin:50px 42px 26px 0;
+  color:#fff;
+  font:600 17px/1.25 'Cairo',sans-serif;
+  text-align:left;
+  text-transform:uppercase;
+}
+.menu-date strong{
+  display:block;
+  font-weight:800;
+  font-size:18px;
+}
+.menu-date span{
+  display:block;
+  font-weight:600;
+  margin-top:2px;
+}
+.menu-links{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  margin:0;
+}
+.menu-links > a,
+.menu-authors-toggle{
+  display:block;
+  width:100%;
+  padding:9px 12px;
+  color:#fff !important;
+  background:transparent;
+  border:0;
+  text-align:left;
+  font:600 19px/1.15 'Cairo',sans-serif !important;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.menu-links > a:hover,
+.menu-authors-toggle:hover{
+  color:#fff !important;
+  background:#545454;
+}
+.menu-links > a.active{
+  font-weight:800 !important;
+  color:var(--rojo) !important;
+}
+.menu-authors-toggle{
+  background:#666 !important;
+  margin:7px 0;
+  font-weight:800 !important;
+}
+.menu-authors-panel{
+  display:none;
+  background:#686868;
+  padding:10px 12px 12px;
+  margin:0 0 7px;
+}
+.menu-authors-panel.open{
+  display:block;
+}
+.menu-author-letters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-bottom:8px;
+}
+.menu-author-letter{
+  border:0;
+  background:#777;
+  color:#fff;
+  min-width:34px;
+  height:30px;
+  font:800 14px/1 'Cairo',sans-serif;
+  cursor:pointer;
+}
+.menu-author-letter:hover,
+.menu-author-letter.active{
+  background:var(--rojo);
+}
+.menu-author-results{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.menu-author-result{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff !important;
+  font:600 14px/1.1 'Cairo',sans-serif;
+}
+.menu-author-result img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  flex:0 0 48px;
+}
+.menu-author-result:hover{
+  color:#fff !important;
+}
+.menu-search{
+  margin-top:25px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.45);
+}
+.menu-search-row{
+  display:grid;
+  grid-template-columns:1fr 38px;
+  gap:8px;
+}
+.menu-search input{
+  width:100%;
+  height:38px;
+  border:1px solid #fff;
+  background:transparent;
+  color:#fff;
+  padding:5px 9px;
+  outline:none;
+  font:500 13px 'Cairo',sans-serif;
+}
+.menu-search input::placeholder{
+  color:#ddd;
+}
+.menu-search-button{
+  height:38px;
+  border:1px solid #fff;
+  background:transparent;
+  color:#fff;
+  position:relative;
+  cursor:pointer;
+}
+.menu-search-button:before{
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  border:2px solid #fff;
+  border-radius:50%;
+  left:8px;
+  top:7px;
+}
+.menu-search-button:after{
+  content:"";
+  position:absolute;
+  width:8px;
+  height:2px;
+  background:#fff;
+  transform:rotate(45deg);
+  left:21px;
+  top:23px;
+}
+.menu-search-dropdown{
+  display:none;
+  margin-top:6px;
+  background:#eee;
+  color:#111;
+  max-height:220px;
+  overflow-y:auto;
+}
+.menu-search-dropdown.open{
+  display:block;
+}
+.menu-search-dropdown a{
+  display:block;
+  padding:8px 9px;
+  color:#111 !important;
+  border-bottom:1px solid #ccc;
+  font:600 12px/1.15 'Cairo',sans-serif;
+}
+.menu-search-dropdown span{
+  display:block;
+  font-weight:400;
+  margin-top:2px;
+}
+.menu-follow{
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.45);
+  color:#fff;
+  font:600 14px/1.2 'Cairo',sans-serif;
+  text-transform:uppercase;
+}
+.menu-instagram{
+  display:block;
+  margin-top:10px;
+}
+.menu-instagram img{
+  display:block;
+  width:58px;
+  height:58px;
+  object-fit:contain;
+}
+.menu-authors-link{
+  display:block;
+  margin-top:20px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.45);
+  color:#fff !important;
+  font:800 19px/1.15 'Cairo',sans-serif;
+  text-transform:uppercase;
+}
+
+/* ============================================================
+   ENLACES DE ENTRADAS — 300 × 225, sin rectángulo
+   ============================================================ */
+.section-list,
+.index-entry-columns,
+.blog-post-list{
+  grid-template-columns:1fr !important;
+}
+
+.section-entry,
+.index-entry,
+.blog-post-entry{
+  position:relative;
+  display:grid !important;
+  grid-template-columns:300px minmax(0,1fr) !important;
+  grid-template-rows:auto auto auto 1fr;
+  column-gap:24px;
+  align-items:start;
+  border:0 !important;
+  border-bottom:1px solid var(--linea) !important;
+  background:transparent !important;
+  padding:0 0 22px !important;
+  margin:0 0 22px !important;
+  min-height:0 !important;
+}
+
+.section-entry-image,
+.index-entry-image,
+.blog-post-image{
+  grid-column:1;
+  grid-row:1 / span 4;
+  width:300px !important;
+  height:225px !important;
+  max-width:100%;
+  object-fit:cover;
+  display:block;
+  background:var(--beige);
+}
+.entry-image-placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:300px;
+  height:225px;
+  max-width:100%;
+  background:var(--beige);
+  color:var(--texto);
+  font:600 11px 'Cairo',sans-serif;
+  text-transform:uppercase;
+}
+.section-entry-body,
+.index-entry-body,
+.blog-post-info{
+  grid-column:2;
+  min-width:0;
+}
+.section-entry-type,
+.index-entry-type,
+.blog-post-type{
+  display:block;
+  margin:0 0 7px !important;
+  color:var(--rojo) !important;
+  font:600 12px/1.1 'Cairo',sans-serif !important;
+  text-transform:uppercase;
+}
+.section-entry h2,
+.index-entry .title,
+.blog-post-entry h2{
+  margin:0 !important;
+  color:var(--texto) !important;
+  font:400 27px/1.12 'Young Serif',serif !important;
+}
+.section-entry h2 a,
+.index-entry .title a,
+.blog-post-entry h2 a{
+  color:inherit;
+}
+.section-entry-author,
+.index-entry .author{
+  margin:13px 0 0 !important;
+  padding:0 !important;
+  text-align:left !important;
+  font:600 14px/1.2 'Cairo',sans-serif !important;
+}
+.section-entry-date,
+.index-entry-date,
+.blog-post-date{
+  margin:9px 0 0 !important;
+  padding:0 !important;
+  text-align:left !important;
+  font:500 12px/1.2 Poppins,sans-serif !important;
+}
+
+/* Las imágenes de perfil siguen siendo circulares */
+.note-profile,
+.blog-card-image,
+.blog-head-profile,
+.entry-profile,
+.entry-profile-placeholder,
+.profile-image{
+  border-radius:50% !important;
+  object-fit:cover !important;
+}
+
+/* Página personal de autor: nombre Young Serif + semblanza Cairo */
+.blog-entry-head:has(.blog-name) .blog-name{
+  font-family:'Young Serif',serif !important;
+}
+.blog-entry-head:has(.blog-name) .blog-author{
+  font-family:'Cairo',sans-serif !important;
+  font-weight:600 !important;
+  text-align:left !important;
+  font-variant:normal !important;
+}
+
+/* El encabezado de perfil conserva el retrato circular */
+.blog-head-profile{
+  border-radius:50% !important;
+}
+
+/* Enlaces de INDEX de poesía/opinión */
+.index-entry{
+  border-bottom:1px solid var(--linea) !important;
+}
+
+/* ============================================================
+   MÓVIL
+   ============================================================ */
+@media(max-width:1000px){
+  .menu-panel{
+    width:min(88vw,390px) !important;
+    padding:24px 22px 30px !important;
+  }
+  .menu-date{
+    margin:48px 34px 20px 0;
+    font-size:14px;
+  }
+  .menu-date strong{font-size:15px;}
+  .menu-links > a,
+  .menu-authors-toggle{font-size:17px !important;padding:8px 10px;}
+  .menu-search{margin-top:18px;padding-top:14px;}
+  .menu-follow{margin-top:17px;padding-top:14px;font-size:12px;}
+  .menu-authors-link{font-size:17px;margin-top:15px;padding-top:13px;}
+
+  .header{
+    padding:18px 18px 18px !important;
+  }
+  .section-heading{
+    min-height:82px;
+    padding:15px 18px;
+    font-size:32px !important;
+  }
+
+  .section-entry,
+  .index-entry,
+  .blog-post-entry{
+    grid-template-columns:minmax(0,300px) minmax(0,1fr) !important;
+    column-gap:16px;
+  }
+  .section-entry-image,
+  .index-entry-image,
+  .blog-post-image,
+  .entry-image-placeholder{
+    width:300px !important;
+    height:225px !important;
+  }
+  .section-entry h2,
+  .index-entry .title,
+  .blog-post-entry h2{
+    font-size:22px !important;
+  }
+  .section-entry-type,
+  .index-entry-type,
+  .blog-post-type{
+    font-size:10px !important;
+  }
+  .section-entry-author,
+  .index-entry .author{
+    font-size:12px !important;
+  }
+  .section-entry-date,
+  .index-entry-date,
+  .blog-post-date{
+    font-size:10px !important;
+  }
+}
+
+@media(max-width:620px){
+  .section-entry,
+  .index-entry,
+  .blog-post-entry{
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto !important;
+  }
+  .section-entry-image,
+  .index-entry-image,
+  .blog-post-image,
+  .entry-image-placeholder{
+    grid-column:1;
+    grid-row:1;
+    width:300px !important;
+    height:225px !important;
+    margin-bottom:13px;
+  }
+  .section-entry-body,
+  .index-entry-body,
+  .blog-post-info{
+    grid-column:1;
+    grid-row:2;
+  }
+}
+
+.menu-theme{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:9px 12px;
+  margin:0 0 8px;
+  color:#fff;
+  font:600 16px/1.1 'Cairo',sans-serif;
+  text-transform:uppercase;
+}
+.menu-theme button{
+  border:0;
+  background:transparent;
+  color:#fff;
+  font:600 22px/1 'Cairo',sans-serif;
+  cursor:pointer;
+  padding:0;
+}
+
+/* INDEX — Poesía y Opinión: imagen rectangular 300 × 225 */
+.index-entry-profile{
+  grid-column:1 !important;
+  grid-row:1 / span 4 !important;
+  width:300px !important;
+  height:225px !important;
+  border:0 !important;
+  border-radius:0 !important;
+  overflow:hidden;
+  background:var(--beige);
+}
+.index-entry-profile-image{
+  width:300px !important;
+  height:225px !important;
+  max-width:100%;
+  object-fit:cover !important;
+  border-radius:0 !important;
+  display:block;
+}
+.index-entry-body{
+  grid-column:2 !important;
+  min-width:0;
+}
+.index-entry .star,
+.note .star{
+  display:none !important;
+}
+@media(max-width:620px){
+  .index-entry-profile{
+    grid-column:1 !important;
+    grid-row:1 !important;
+    width:300px !important;
+    height:225px !important;
+    margin-bottom:13px;
+  }
+  .index-entry-profile-image{
+    width:300px !important;
+    height:225px !important;
+  }
+  .index-entry-body{
+    grid-column:1 !important;
+    grid-row:2 !important;
+  }
+}
+
+.menu-search-dropdown{
+  position:static !important;
+  left:auto !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:auto !important;
+  width:100% !important;
+  padding:0 !important;
+  border:0 !important;
+  z-index:auto !important;
+}
+.menu-search-dropdown .search-no{
+  padding:9px;
+  font:600 11px 'Cairo',sans-serif;
+}
+
+.menu-panel .menu-links{gap:0 !important;}
+
+/* BLOG — mismas entradas editoriales de una sola fila */
+.blog-page-entry{
+  position:relative !important;
+  display:grid !important;
+  grid-template-columns:300px minmax(0,1fr) !important;
+  grid-template-rows:auto auto auto 1fr !important;
+  column-gap:24px !important;
+  align-items:start !important;
+  min-height:0 !important;
+  padding:0 0 22px !important;
+  margin:0 0 22px !important;
+  border:0 !important;
+  border-bottom:1px solid var(--linea) !important;
+  background:transparent !important;
+}
+.blog-page-entry .blog-post-image,
+.blog-page-entry .entry-image-placeholder{
+  grid-column:1 !important;
+  grid-row:1 / span 4 !important;
+}
+.blog-page-entry .blog-post-info{
+  grid-column:2 !important;
+}
+.blog-page-entry .note h2,
+.blog-page-entry h2{
+  min-height:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  color:var(--texto) !important;
+  display:block !important;
+  text-align:left !important;
+  font:400 27px/1.12 'Young Serif',serif !important;
+}
+.blog-page-entry .note-profile{
+  display:none !important;
+}
+@media(max-width:620px){
+  .blog-page-entry{
+    grid-template-columns:1fr !important;
+    grid-template-rows:auto auto !important;
+  }
+  .blog-page-entry .blog-post-image,
+  .blog-page-entry .entry-image-placeholder{
+    grid-column:1 !important;
+    grid-row:1 !important;
+  }
+  .blog-page-entry .blog-post-info{
+    grid-column:1 !important;
+    grid-row:2 !important;
+  }
 }
