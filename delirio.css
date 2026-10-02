@@ -2662,15 +2662,14 @@ body:has(.logo-principal) .header{padding-top:24px;}
   padding:20px 35px 20px 220px;
   background:var(--rojo);
   color:#fff;
-  font:italic 700 42px/1.05 'Playfair Display',serif;
+  font:normal 400 42px/1.05 'Young Serif',serif;
   text-transform:none;
   text-align:right;
 }
 .blog-entry-head:has(.blog-name) .blog-author{
   margin:22px 25px 0 235px;
   text-align:left;
-  font:700 17px/1.2 Poppins,sans-serif;
-  font-variant:small-caps;
+  font:500 17px/1.2 Cairo,sans-serif;
 }
 .blog-head-profile{
   position:absolute;
