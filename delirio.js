@@ -371,15 +371,15 @@
   const menu = document.getElementById("menuPanel");
 
   const MENU_AUTHORS = [
-    {initial:"A", name:"Amairany Rincón", image:"imagenes/PERFIL_AR.jpg", href:"red.html"},
-    {initial:"D", name:"David Paredes Hernández", image:"imagenes/PERFIL_DH.png", href:"aviario.html"},
-    {initial:"E", name:"Elizabeth Campos", image:"imagenes/PERFIL_EC.jpg", href:"latidos-nocivos.html"},
-    {initial:"E", name:"Enrique Tinajero", image:"imagenes/PERFIL.png", href:"narrativa.html"},
-    {initial:"M", name:"Meredith Villalba", image:"imagenes/PERFIL_MV.jpg", href:"orphea.html"},
-    {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"NR.html"},
-    {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"bitacora-de-cromo.html"},
-    {initial:"S", name:"Santiago Riojas", image:"imagenes/COLOR_SR (1).png", href:"SR.html"},
-    {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"mientras-trato-de-vivir.html"}
+    {initial:"A", name:"Amairany Rincón", image:"imagenes/PERFIL_AR.jpg", href:"a-amairany-r.html"},
+    {initial:"D", name:"David Paredes Hernández", image:"imagenes/PERFIL_DH.png", href:"a-david-h.html"},
+    {initial:"E", name:"Elizabeth Campos", image:"imagenes/PERFIL_EC.jpg", href:"a-elizabeth-c.html"},
+    {initial:"E", name:"Enrique Tinajero", image:"imagenes/PERFIL.png", href:"et.cuento1.html"},
+    {initial:"M", name:"Meredith Villalba", image:"imagenes/PERFIL_MV.jpg", href:"a-meredith-v.html"},
+    {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"a-natalia-r.html"},
+    {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"a-renata-t.html"},
+    {initial:"S", name:"Santiago Riojas", image:"imagenes/COLOR_SR (1).png", href:"a-santiago-r.html"},
+    {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"a-ulises-b.html"}
   ];
 
   const MENU_LINKS = [
@@ -545,16 +545,16 @@
   const sectionByFile = {
     "index.html":"index.html",
     "blog.html":"blog.html",
-    "aviario.html":"blog.html",
-    "latidos-nocivos.html":"blog.html",
-    "red.html":"blog.html",
-    "orphea.html":"blog.html",
-    "bitacora-de-cromo.html":"blog.html",
-    "mientras-trato-de-vivir.html":"blog.html",
+    "a-david-h.html":"blog.html",
+    "a-elizabeth-c.html":"blog.html",
+    "a-amairany-r.html":"blog.html",
+    "a-meredith-v.html":"blog.html",
+    "a-renata-t.html":"blog.html",
+    "a-ulises-b.html":"blog.html",
     "estante.html":"estante.html",
     "tintero.html":"tintero.html",
     "fotografia-ilustracion.html":"fotografia-ilustracion.html",
-    "sr.html":"blog.html",
+    "a-santiago-r.html":"blog.html",
     "dh_01.html":"blog.html",
     "ec_01.html":"blog.html",
     "rt_01.html":"blog.html",
@@ -997,15 +997,15 @@
      TARJETAS CON FECHA Y AVATARES EN LOS BLOGS DE AUTOR
      ============================================================ */
   const blogProfiles = {
-    "aviario.html":"imagenes/PERFIL_DH.png",
-    "latidos-nocivos.html":"imagenes/PERFIL_EC.jpg",
-    "red.html":"imagenes/PERFIL_AR.jpg",
-    "orphea.html":"imagenes/PERFIL_MV.jpg",
-    "bitacora-de-cromo.html":"imagenes/PERFIL_RT.jpg",
-    "mientras-trato-de-vivir.html":"imagenes/PERFIL_UB.jpg",
+    "a-david-h.html":"imagenes/PERFIL_DH.png",
+    "a-elizabeth-c.html":"imagenes/PERFIL_EC.jpg",
+    "a-amairany-r.html":"imagenes/PERFIL_AR.jpg",
+    "a-meredith-v.html":"imagenes/PERFIL_MV.jpg",
+    "a-renata-t.html":"imagenes/PERFIL_RT.jpg",
+    "a-ulises-b.html":"imagenes/PERFIL_UB.jpg",
     "estante.html":"imagenes/PERFIL_EST.jpg",
-    "sr.html":"imagenes/COLOR_SR (1).png",
-    "nr.html":"imagenes/PERFIL_NR.jpg"
+    "a-santiago-r.html":"imagenes/COLOR_SR (1).png",
+    "a-natalia-r.html":"imagenes/PERFIL_NR.jpg"
   };
 
   const pageFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
