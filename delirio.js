@@ -376,9 +376,9 @@
     {initial:"E", name:"Elizabeth Campos", image:"imagenes/PERFIL_EC.jpg", href:"latidos-nocivos.html"},
     {initial:"E", name:"Enrique Tinajero", image:"imagenes/PERFIL.png", href:"narrativa.html"},
     {initial:"M", name:"Meredith Villalba", image:"imagenes/PERFIL_MV.jpg", href:"orphea.html"},
-    {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"autor-natalia.html"},
+    {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"NR.html"},
     {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"bitacora-de-cromo.html"},
-    {initial:"S", name:"Santiago Riojas", image:"imagenes/PERFIL_EST.jpg", href:"SR.html"},
+    {initial:"S", name:"Santiago Riojas", image:"imagenes/COLOR_SR (1).png", href:"SR.html"},
     {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"mientras-trato-de-vivir.html"}
   ];
 
@@ -559,6 +559,9 @@
     "ec_01.html":"blog.html",
     "rt_01.html":"blog.html",
     "mv_01.html":"blog.html",
+    "mv_02.html":"blog.html",
+    "mv_03.html":"blog.html",
+    "ar_01.html":"blog.html",
     "ar_01.html":"blog.html",
     "ub_01.html":"blog.html",
     "sr_01.html":"blog.html",
@@ -1001,6 +1004,8 @@
     "bitacora-de-cromo.html":"imagenes/PERFIL_RT.jpg",
     "mientras-trato-de-vivir.html":"imagenes/PERFIL_UB.jpg",
     "estante.html":"imagenes/PERFIL_EST.jpg"
+    "SR.html":"imagenes/COLOR_SR (1).png"
+    "NR.html":"imagenes/PERFIL_NR.jpg"
   };
 
   const pageFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -1018,19 +1023,20 @@
   }
 
   const cardDates = {
-    "DH_01.html":"Agosto 20, 2026",
-    "AR_01.html":"Agosto 13, 2026",
-    "AR_02.html":"Septiembre 05, 2026",
-    "UB_01.html":"Julio 14, 2026",
-    "EC_01.html":"Agosto 05, 2026",
-    "RT_01.html":"Julio 09, 2026",
-    "MV_01.html":"Agosto 05, 2026",
-    "MV_02.html":"Agosto 24, 2026",
-    "SR_01.html":"Agosto 01, 2026",
-    "NR_01.html":"Julio 28, 2026",
-    "NR_02.html":"Junio 26, 2026",
-    "MV.RES1.html":"Mayo 31, 2026",
-    "RT.RES1.html":"Junio 06, 2026"
+    "DH_01.html":"20.08.2026",
+    "AR_01.html":"13.08.2026",
+    "AR_02.html":"05.09.2026",
+    "UB_01.html":"14.07.2026",
+    "EC_01.html":"05.08.2026",
+    "RT_01.html":"09.07.2026",
+    "MV_01.html":"05.08.2026",
+    "MV_02.html":"24.08.2026",
+    "MV_03.html":"25.09.2026",
+    "SR_01.html":"01.08.2026",
+    "NR_01.html":"28.07.2026",
+    "NR_02.html":"26.06.2026",
+    "MV.RES1.html":"31.05.2026",
+    "RT.RES1.html":"06.06.2026"
   };
 
   document.querySelectorAll(".note[data-href], .index-entry[data-href]").forEach(card=>{
