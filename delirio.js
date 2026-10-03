@@ -1004,8 +1004,8 @@
     "bitacora-de-cromo.html":"imagenes/PERFIL_RT.jpg",
     "mientras-trato-de-vivir.html":"imagenes/PERFIL_UB.jpg",
     "estante.html":"imagenes/PERFIL_EST.jpg",
-    "SR.html":"imagenes/COLOR_SR (1).png",
-    "NR.html":"imagenes/PERFIL_NR.jpg"
+    "sr.html":"imagenes/COLOR_SR (1).png",
+    "nr.html":"imagenes/PERFIL_NR.jpg"
   };
 
   const pageFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
