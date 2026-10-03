@@ -379,7 +379,7 @@
     {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"A-Natalia-R.html"},
     {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"A-Renata-T.html"},
     {initial:"S", name:"Santiago Riojas", image:"imagenes/COLOR_SR (1).png", href:"A-Santiago-R.html"},
-    {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"A-ulises-B.html"}
+    {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"A-Ulises-B.html"}
   ];
 
   const MENU_LINKS = [
