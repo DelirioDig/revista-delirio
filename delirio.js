@@ -1003,8 +1003,8 @@
     "orphea.html":"imagenes/PERFIL_MV.jpg",
     "bitacora-de-cromo.html":"imagenes/PERFIL_RT.jpg",
     "mientras-trato-de-vivir.html":"imagenes/PERFIL_UB.jpg",
-    "estante.html":"imagenes/PERFIL_EST.jpg"
-    "SR.html":"imagenes/COLOR_SR (1).png"
+    "estante.html":"imagenes/PERFIL_EST.jpg",
+    "SR.html":"imagenes/COLOR_SR (1).png",
     "NR.html":"imagenes/PERFIL_NR.jpg"
   };
 
