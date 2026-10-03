@@ -371,15 +371,15 @@
   const menu = document.getElementById("menuPanel");
 
   const MENU_AUTHORS = [
-    {initial:"A", name:"Amairany Rincón", image:"imagenes/PERFIL_AR.jpg", href:"a-amairany-r.html"},
-    {initial:"D", name:"David Paredes Hernández", image:"imagenes/PERFIL_DH.png", href:"a-david-h.html"},
-    {initial:"E", name:"Elizabeth Campos", image:"imagenes/PERFIL_EC.jpg", href:"a-elizabeth-c.html"},
-    {initial:"E", name:"Enrique Tinajero", image:"imagenes/PERFIL.png", href:"et.cuento1.html"},
-    {initial:"M", name:"Meredith Villalba", image:"imagenes/PERFIL_MV.jpg", href:"a-meredith-v.html"},
-    {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"a-natalia-r.html"},
-    {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"a-renata-t.html"},
-    {initial:"S", name:"Santiago Riojas", image:"imagenes/COLOR_SR (1).png", href:"a-santiago-r.html"},
-    {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"a-ulises-b.html"}
+    {initial:"A", name:"Amairany Rincón", image:"imagenes/PERFIL_AR.jpg", href:"A-Amairany-R.html"},
+    {initial:"D", name:"David Paredes Hernández", image:"imagenes/PERFIL_DH.png", href:"A-David-H.html"},
+    {initial:"E", name:"Elizabeth Campos", image:"imagenes/PERFIL_EC.jpg", href:"A-Elizabeth-C.html"},
+    {initial:"E", name:"Enrique Tinajero", image:"imagenes/PERFIL.png", href:"ET.CUENTO1.html"},
+    {initial:"M", name:"Meredith Villalba", image:"imagenes/PERFIL_MV.jpg", href:"A-Meredith-V.html"},
+    {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"A-Natalia-R.html"},
+    {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"A-Renata-T.html"},
+    {initial:"S", name:"Santiago Riojas", image:"imagenes/COLOR_SR (1).png", href:"A-Santiago-R.html"},
+    {initial:"U", name:"Ulises Burgo", image:"imagenes/PERFIL_UB.jpg", href:"A-ulises-B.html"}
   ];
 
   const MENU_LINKS = [
