@@ -562,7 +562,7 @@
     "mv_02.html":"blog.html",
     "mv_03.html":"blog.html",
     "ar_01.html":"blog.html",
-    "ar_01.html":"blog.html",
+    "ar_02.html":"blog.html",
     "ub_01.html":"blog.html",
     "sr_01.html":"blog.html",
     "poesia.html":"poesia.html",
