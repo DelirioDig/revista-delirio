@@ -2,950 +2,564 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>TINTERO | Delirio</title>
-
-  <!-- CSS general de Delirio -->
-  <link rel="stylesheet" href="delirio.css">
-
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
-
-  <style>
-    /* =====================================================
-       CONFIGURACIÓN GENERAL DE ESTA PÁGINA
-       ===================================================== */
-
-    .tintero-page {
-      width: 100%;
-      min-width: 0;
-    }
-
-    .tintero-page *,
-    .tintero-page *::before,
-    .tintero-page *::after {
-      box-sizing: border-box;
-    }
-
-    .tintero-page a {
-      color: inherit;
-    }
-
-    /* =====================================================
-       ENCABEZADO DE LA SECCIÓN
-       ===================================================== */
-
-    .tintero-heading {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin: 0 auto 24px;
-      padding: 24px 15px 0;
-      text-align: center;
-    }
-
-    .tintero-heading img {
-      display: block;
-      width: min(300px, 75%);
-      height: auto;
-      object-fit: contain;
-    }
-
-    .tintero-heading-line {
-      width: 100%;
-      height: 1px;
-      margin-top: 22px;
-      background: var(--linea, #111);
-    }
-
-    /* =====================================================
-       DISTRIBUCIÓN DEL CONTENIDO Y MINI
-       ===================================================== */
-
-    .tintero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 235px;
-      align-items: start;
-      gap: 30px;
-      width: 100%;
-      min-width: 0;
-      padding: 0 52px;
-    }
-
-    .tintero-main {
-      min-width: 0;
-      width: 100%;
-    }
-
-    .tintero-breadcrumb {
-      margin: 0 0 15px;
-      font-family: Poppins, sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 1.6;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .tintero-breadcrumb a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* =====================================================
-       PORTADA
-       ===================================================== */
-
-    .tintero-cover {
-      position: relative;
-      isolation: isolate;
-      width: 100%;
-      aspect-ratio: 210 / 297;
-      overflow: hidden;
-
-      /*
-        Esta imagen ya contiene el fondo y el logotipo.
-        No se agrega otro logotipo desde el HTML.
-      */
-      background-image: url("imagenes/fondo_tintero.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-
-      color: #111;
-      container-type: inline-size;
-    }
-
-    .tintero-cover a {
-      text-decoration: none;
-    }
-
-    .tintero-cover a:hover .cover-title {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
-
-    /* Publicaciones de la portada */
-
-    .cover-story {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      min-width: 0;
-      margin: 0;
-      padding: 0;
-      color: #111;
-    }
-
-    .cover-category {
-      margin: 0 0 1.2%;
-      font-family: Cairo, sans-serif;
-      font-size: 1.35cqw;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .cover-author {
-      margin: 0 0 1.8%;
-      font-family: Poppins, sans-serif;
-      font-size: 1.2cqw;
-      font-weight: 500;
-      line-height: 1.35;
-      text-transform: uppercase;
-    }
-
-    .cover-title {
-      margin: 0;
-      font-family: "Young Serif", serif;
-      font-size: 2.5cqw;
-      font-weight: 400;
-      line-height: 1.08;
-      overflow-wrap: anywhere;
-    }
-
-    .cover-image-wrap {
-      position: relative;
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      margin: 0 0 3%;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .cover-image {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /*
-      Mientras no cargues una imagen, se conserva el espacio
-      reservado sin mostrar el icono de imagen rota.
-    */
-    .cover-image:not([src]),
-    .cover-image[src=""] {
-      visibility: hidden;
-    }
-
-    /* Dos publicaciones de la parte superior */
-
-    .cover-story--top-left {
-      top: 4.5%;
-      left: 5%;
-      width: 39%;
-    }
-
-    .cover-story--top-right {
-      top: 4.5%;
-      right: 5%;
-      width: 39%;
-    }
-
-    /* Título central de la sección */
-
-    .cover-masthead {
-      position: absolute;
-      top: 29%;
-      left: 50%;
-      width: 74%;
-      transform: translateX(-50%);
-      text-align: center;
-      color: #111;
-    }
-
-    .cover-masthead-title {
-      margin: 0;
-      font-family: "Young Serif", serif;
-      font-size: 8cqw;
-      font-weight: 400;
-      line-height: 0.95;
-    }
-
-    .cover-masthead-subtitle {
-      margin: 3% 0 0;
-      font-family: Cairo, sans-serif;
-      font-size: 1.8cqw;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    /* Tres publicaciones de la parte media */
-
-    .cover-story--middle {
-      top: 51%;
-      width: 27%;
-    }
-
-    .cover-story--middle .cover-title {
-      font-size: 2.25cqw;
-    }
-
-    .cover-story--middle .cover-category {
-      font-size: 1.2cqw;
-    }
-
-    .cover-story--middle .cover-author {
-      font-size: 1.05cqw;
-    }
-
-    .cover-story--middle-left {
-      left: 5%;
-    }
-
-    .cover-story--middle-center {
-      left: 36.5%;
-    }
-
-    .cover-story--middle-right {
-      right: 5%;
-    }
-
-    /* Publicación destacada inferior */
-
-    .cover-story--feature {
-      top: 76%;
-      right: 5%;
-      width: 42%;
-    }
-
-    .cover-story--feature .cover-category {
-      font-size: 1.5cqw;
-    }
-
-    .cover-story--feature .cover-title {
-      font-size: 4.1cqw;
-    }
-
-    .cover-frequency {
-      margin: 2.5% 0 0;
-      font-family: Cairo, sans-serif;
-      font-size: 1.2cqw;
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .cover-edition-date {
-      margin: 2% 0 0;
-      font-family: Poppins, sans-serif;
-      font-size: 1.15cqw;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    /* URL en la parte inferior */
-
-    .cover-url {
-      position: absolute;
-      right: 5%;
-      bottom: 1.5%;
-      left: 5%;
-      margin: 0;
-      font-family: Poppins, sans-serif;
-      font-size: 1cqw;
-      font-weight: 400;
-      line-height: 1.3;
-      text-align: center;
-      overflow-wrap: anywhere;
-    }
-
-    .cover-url a {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    /* =====================================================
-       MINI / BARRA LATERAL
-       ===================================================== */
-
-    .tintero-mini {
-      width: 100%;
-      min-width: 0;
-      font-family: "Crimson Pro", Georgia, serif;
-    }
-
-    .tintero-mini-section {
-      margin: 0 0 28px;
-    }
-
-    .tintero-mini-heading {
-      margin: 0 0 12px;
-      padding: 0 0 7px;
-      border-bottom: 1px solid var(--linea, #111);
-      font-family: "Playfair Display", serif;
-      font-size: 21px;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--rojo, #c14e59);
-      text-transform: uppercase;
-    }
-
-    .tintero-mini-cover {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 0 12px;
-    }
-
-    .tintero-mini-text {
-      margin: 0 0 10px;
-      font-size: 18px;
-      line-height: 1.35;
-    }
-
-    .tintero-mini-link {
-      display: inline-block;
-      font-family: Poppins, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .tintero-mini-image {
-      display: block;
-      width: 60px;
-      height: 60px;
-      margin: 0 0 10px;
-      object-fit: contain;
-    }
-
-    .tintero-mini-ad {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 150px;
-      padding: 15px;
-      border: 1px solid var(--linea, #111);
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      line-height: 1.3;
-      text-align: center;
-    }
-
-    /* =====================================================
-       PIE DE PÁGINA
-       ===================================================== */
-
-    .tintero-footer {
-      width: 100%;
-      margin-top: 55px;
-      padding: 25px 52px 35px;
-      border-top: 1px solid var(--linea, #111);
-    }
-
-    .tintero-footer-inner {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .tintero-footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      font-family: Poppins, sans-serif;
-      font-size: 12px;
-    }
-
-    .tintero-footer-nav a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .tintero-footer-logo {
-      display: block;
-      width: 125px;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .tintero-footer-description {
-      margin: 0;
-      font-family: "Crimson Pro", Georgia, serif;
-      font-size: 16px;
-      line-height: 1.35;
-      text-align: right;
-    }
-
-    .tintero-footer-bottom {
-      margin: 25px 0 0;
-      font-family: Poppins, sans-serif;
-      font-size: 10px;
-      line-height: 1.5;
-      text-align: center;
-    }
-
-    /* =====================================================
-       RESPONSIVE
-       ===================================================== */
-
-    @media (max-width: 850px) {
-      .tintero-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 35px;
-        padding: 0 22px;
-      }
-
-      .tintero-mini {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: start;
-        gap: 20px;
-      }
-
-      .tintero-mini-section {
-        min-width: 0;
-        margin-bottom: 10px;
-      }
-
-      .tintero-footer {
-        padding-right: 22px;
-        padding-left: 22px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .tintero-heading {
-        padding-top: 18px;
-      }
-
-      .tintero-heading img {
-        width: min(230px, 75%);
-      }
-
-      .tintero-layout {
-        gap: 28px;
-        padding: 0 12px;
-      }
-
-      .tintero-breadcrumb {
-        font-size: 9px;
-      }
-
-      .cover-story--top-left,
-      .cover-story--top-right {
-        top: 4%;
-      }
-
-      .cover-story--middle {
-        top: 51%;
-      }
-
-      .cover-story--feature {
-        top: 76%;
-      }
-
-      .tintero-mini {
-        gap: 14px;
-      }
-
-      .tintero-mini-heading {
-        font-size: 18px;
-      }
-
-      .tintero-mini-text {
-        font-size: 16px;
-      }
-
-      .tintero-footer {
-        margin-top: 35px;
-        padding: 22px 12px 25px;
-      }
-
-      .tintero-footer-inner {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 20px;
-      }
-
-      .tintero-footer-nav {
-        justify-content: center;
-      }
-
-      .tintero-footer-description {
-        text-align: center;
-      }
-
-      .tintero-footer-logo {
-        width: 110px;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tintero | Sección quincenal | Delirio</title>
+
+<link href="delirio.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================
+   PORTADA TINTERO
+   Los estilos se limitan a esta página.
+   ===================================================== */
+
+.tintero-cover,
+.tintero-cover * {
+  box-sizing: border-box;
+}
+
+.tintero-cover {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 210 / 297;
+  overflow: hidden;
+  container-type: inline-size;
+
+  /* Fondo completo: ya contiene el color y el logotipo */
+  background-image: url("imagenes/fondo_tintero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  color: #111;
+}
+
+.tintero-cover a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tintero-cover a:hover .tc-title {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.tc-story {
+  position: absolute;
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.tc-image-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 3%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.tc-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tc-category {
+  margin: 0 0 1.5%;
+  font-family: Cairo, sans-serif;
+  font-size: 1.35cqw;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tc-author {
+  margin: 0 0 2%;
+  font-family: Poppins, sans-serif;
+  font-size: 1.15cqw;
+  font-weight: 500;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.tc-title {
+  margin: 0;
+  font-family: "Young Serif", serif;
+  font-size: 2.5cqw;
+  font-weight: 400;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+/* Dos relatos superiores */
+
+.tc-top-left {
+  top: 4.5%;
+  left: 5%;
+  width: 39%;
+}
+
+.tc-top-right {
+  top: 4.5%;
+  right: 5%;
+  width: 39%;
+}
+
+/* Título de Tintero.
+   El logotipo de Delirio no se repite aquí. */
+
+.tc-masthead {
+  position: absolute;
+  top: 29%;
+  left: 50%;
+  width: 76%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.tc-masthead-title {
+  margin: 0;
+  font-family: "Young Serif", serif;
+  font-size: 8cqw;
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.tc-masthead-subtitle {
+  margin: 3% 0 0;
+  font-family: Cairo, sans-serif;
+  font-size: 1.8cqw;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+/* Tres publicaciones centrales */
+
+.tc-middle {
+  top: 51%;
+  width: 27%;
+}
+
+.tc-middle .tc-category {
+  font-size: 1.2cqw;
+}
+
+.tc-middle .tc-author {
+  font-size: 1.05cqw;
+}
+
+.tc-middle .tc-title {
+  font-size: 2.2cqw;
+}
+
+.tc-middle-left {
+  left: 5%;
+}
+
+.tc-middle-center {
+  left: 36.5%;
+}
+
+.tc-middle-right {
+  right: 5%;
+}
+
+/* Publicación destacada inferior */
+
+.tc-feature {
+  top: 76%;
+  right: 5%;
+  width: 42%;
+}
+
+.tc-feature .tc-category {
+  font-size: 1.5cqw;
+}
+
+.tc-feature .tc-title {
+  font-size: 4.1cqw;
+}
+
+.tc-frequency {
+  margin: 2.5% 0 0;
+  font-family: Cairo, sans-serif;
+  font-size: 1.2cqw;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tc-edition-date {
+  margin: 2% 0 0;
+  font-family: Poppins, sans-serif;
+  font-size: 1.15cqw;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* URL inferior */
+
+.tc-url {
+  position: absolute;
+  right: 5%;
+  bottom: 1.5%;
+  left: 5%;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 1cqw;
+  line-height: 1.3;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.tc-url a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Ajustes para pantallas pequeñas */
+
+@media (max-width: 850px) {
+  .tintero-cover {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .tc-top-left,
+  .tc-top-right {
+    top: 4%;
+  }
+
+  .tc-middle {
+    top: 51%;
+  }
+
+  .tc-feature {
+    top: 76%;
+  }
+}
+</style>
 </head>
 
-<body class="dark">
+<body>
 
-  <!-- =====================================================
-       ENCABEZADO GENERAL DE DELIRIO
-       ===================================================== -->
+<!-- =====================================================
+     ENCABEZADO GENERAL
+     ===================================================== -->
 
-  <header id="top-banner">
-    <button
-      id="menuButton"
-      type="button"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="menuPanel"
-    >
-      ☰
-    </button>
+<header id="top-banner">
+  <button aria-label="Menú" class="banner-menu" id="menuButton" type="button">
+    <span></span><span></span><span></span>
+  </button>
 
-    <a class="banner-logo" href="index.html" aria-label="Inicio de Delirio">
-      <img
-        src="imagenes/LOGOSINFONDO.png"
-        alt="Delirio"
-      >
-    </a>
+  <a href="index.html">
+    <img alt="Delirio" class="banner-logo" src="imagenes/LOGOSINFONDO.png">
+  </a>
 
-    <a class="banner-edition" href="revista.html">
-      EDICIÓN ACTUAL
-    </a>
+  <a class="edicion" href="revista.html">
+    EDICIÓN<br>ACTUAL
+  </a>
 
-    <button
-      id="bannerSearch"
-      type="button"
-      aria-label="Buscar"
-    >
-      ⌕
-    </button>
+  <button aria-label="Buscar" class="lupa-banner" id="bannerSearch" type="button"></button>
+</header>
 
-    <button
-      id="themeButton"
-      type="button"
-      aria-label="Cambiar tema"
-    >
-      ☀
-    </button>
-  </header>
+<!-- =====================================================
+     MENÚ
+     ===================================================== -->
 
-  <!-- =====================================================
-       MENÚ LATERAL
-       ===================================================== -->
+<div class="menu-panel" id="menuPanel">
+  <button class="menu-close" id="menuClose" type="button">×</button>
 
-  <nav id="menuPanel" class="menu-panel" aria-label="Menú principal">
-
-    <a href="index.html">INICIO</a>
-    <a href="blog.html">BLOG</a>
-    <a href="revista.html">REVISTA</a>
-    <a href="poesia.html">POESÍA</a>
-    <a href="tintero.html" aria-current="page">TINTERO</a>
-    <a href="autores.html">AUTORES</a>
-
-    <div class="menu-divider"></div>
-
-    <a href="aviario.html">DAVID PAREDES HERNÁNDEZ</a>
-    <a href="latidos-nocivos.html">ELIZABETH CAMPOS</a>
-    <a href="NR_01.html">NATALIA REGNIER</a>
-    <a href="SR_01.html">SANTIAGO RIOJAS</a>
-
-    <div class="menu-divider"></div>
-
-    <a
-      href="https://www.instagram.com/Delirio_revista/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      INSTAGRAM
-    </a>
-
-    <a href="revista.html">EDICIÓN DIGITAL</a>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+    <a href="cine.html">Cine</a>
+    <a href="narrativa.html">Narrativa</a>
   </nav>
-
-  <!-- =====================================================
-       CONTENIDO DE LA PÁGINA
-       ===================================================== -->
-
-  <div class="page-wrap">
-    <main class="page tintero-page">
-
-      <!-- Encabezado propio de TINTERO -->
-      <section class="tintero-heading">
-        <img
-          src="imagenes/tinterosinfondo.png"
-          alt="Tintero"
-        >
-        <div class="tintero-heading-line"></div>
-      </section>
-
-      <div class="tintero-layout">
-
-        <!-- =================================================
-             COLUMNA PRINCIPAL: PORTADA
-             ================================================= -->
-
-        <section class="tintero-main" aria-label="Portada de Tintero">
-
-          <nav class="tintero-breadcrumb" aria-label="Ruta de navegación">
-            <a href="index.html">INICIO</a>
-            /
-            <a href="blog.html">BLOG</a>
-            /
-            <span>TINTERO</span>
-          </nav>
-
-          <div class="tintero-cover">
-
-            <!-- PUBLICACIÓN 1: RELATO -->
-            <article class="cover-story cover-story--top-left">
-
-              <a href="PAGINA_RELATO_01.html">
-                <div class="cover-image-wrap">
-                  <img
-                    class="cover-image"
-                    src="imagenes/tintero_relato_01.jpg"
-                    alt="Imagen de la primera publicación de relato"
-                  >
-                </div>
-
-                <p class="cover-category">RELATO</p>
-                <p class="cover-author">NOMBRE DEL AUTOR</p>
-                <h2 class="cover-title">Título</h2>
-              </a>
-
-            </article>
-
-            <!-- PUBLICACIÓN 2: RELATO -->
-            <article class="cover-story cover-story--top-right">
-
-              <a href="PAGINA_RELATO_02.html">
-                <div class="cover-image-wrap">
-                  <img
-                    class="cover-image"
-                    src="imagenes/tintero_relato_02.jpg"
-                    alt="Imagen de la segunda publicación de relato"
-                  >
-                </div>
-
-                <p class="cover-category">RELATO</p>
-                <p class="cover-author">DAVID PAREDES HERNÁNDEZ</p>
-                <h2 class="cover-title">Título</h2>
-              </a>
-
-            </article>
-
-            <!-- TÍTULO CENTRAL DE LA SECCIÓN
-                 El logotipo de fondo ya está en fondo_tintero.png. -->
-            <div class="cover-masthead">
-              <h1 class="cover-masthead-title">Tintero</h1>
-              <p class="cover-masthead-subtitle">Sección quincenal</p>
-            </div>
-
-            <!-- PUBLICACIÓN 3: OPINIÓN -->
-            <article class="cover-story cover-story--middle cover-story--middle-left">
-
-              <a href="PAGINA_OPINION.html">
-                <div class="cover-image-wrap">
-                  <img
-                    class="cover-image"
-                    src="imagenes/tintero_opinion.jpg"
-                    alt="Imagen de la publicación de opinión"
-                  >
-                </div>
-
-                <p class="cover-category">OPINIÓN</p>
-                <p class="cover-author">MEREDITH VILLALBA</p>
-                <h2 class="cover-title">Título</h2>
-              </a>
-
-            </article>
-
-            <!-- PUBLICACIÓN 4: POESÍA -->
-            <article class="cover-story cover-story--middle cover-story--middle-center">
-
-              <a href="PAGINA_POESIA.html">
-                <div class="cover-image-wrap">
-                  <img
-                    class="cover-image"
-                    src="imagenes/tintero_poesia.jpg"
-                    alt="Imagen de la publicación de poesía"
-                  >
-                </div>
-
-                <p class="cover-category">POESÍA</p>
-                <p class="cover-author">NATALIA REGNIER</p>
-                <h2 class="cover-title">Título</h2>
-              </a>
-
-            </article>
-
-            <!-- PUBLICACIÓN 5: REDACCIÓN -->
-            <article class="cover-story cover-story--middle cover-story--middle-right">
-
-              <a href="PAGINA_REDACCION.html">
-                <div class="cover-image-wrap">
-                  <img
-                    class="cover-image"
-                    src="imagenes/tintero_redaccion.jpg"
-                    alt="Imagen de la publicación de redacción"
-                  >
-                </div>
-
-                <p class="cover-category">REDACCIÓN</p>
-                <p class="cover-author">ULISES BURGO</p>
-                <h2 class="cover-title">Título</h2>
-              </a>
-
-            </article>
-
-            <!-- PUBLICACIÓN DESTACADA INFERIOR -->
-            <article class="cover-story cover-story--feature">
-
-              <a href="PAGINA_POESIA_DESTACADA.html">
-                <div class="cover-image-wrap">
-                  <img
-                    class="cover-image"
-                    src="imagenes/tintero_poesia_02.jpg"
-                    alt="Imagen de la publicación destacada"
-                  >
-                </div>
-
-                <p class="cover-category">POESÍA</p>
-                <h2 class="cover-title">Eres tú</h2>
-
-                <p class="cover-frequency">Sección quincenal</p>
-                <p class="cover-edition-date">
-                  Octubre 11, 2026 / No. 1
-                </p>
-              </a>
-
-            </article>
-
-            <!-- DIRECCIÓN DEL SITIO -->
-            <p class="cover-url">
-              <a
-                href="https://deliriodig.github.io/revista-delirio/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://deliriodig.github.io/revista-delirio/
-              </a>
-            </p>
-
-          </div>
-        </section>
-
-        <!-- =================================================
-             COLUMNA LATERAL: MINI
-             ================================================= -->
-
-        <aside class="tintero-mini" aria-label="Contenido adicional">
-
-          <!-- Edición actual -->
-          <section class="tintero-mini-section">
-            <h2 class="tintero-mini-heading">Edición actual</h2>
-
-            <a href="revista.html">
-              <img
-                class="tintero-mini-cover"
-                src="imagenes/PORTADA-AGO.png"
-                alt="Portada de la edición de agosto de Delirio"
-              >
-            </a>
-
-            <p class="tintero-mini-text">
-              Delirio, agosto de 2026.
-            </p>
-
-            <a class="tintero-mini-link" href="revista.html">
-              LEER REVISTA
-            </a>
-          </section>
-
-          <!-- Colaboración -->
-          <section class="tintero-mini-section">
-            <h2 class="tintero-mini-heading">Colaboración</h2>
-
-            <p class="tintero-mini-text">
-              Santiago Riojas
-            </p>
-
-            <a class="tintero-mini-link" href="SR_01.html">
-              DESORDEN MENTAL Y UNA PIZCA DE CREATIVIDAD
-            </a>
-          </section>
-
-          <!-- Instagram -->
-          <section class="tintero-mini-section">
-            <h2 class="tintero-mini-heading">Instagram</h2>
-
-            <img
-              class="tintero-mini-image"
-              src="imagenes/logoig.png"
-              alt="Instagram"
-            >
-
-            <a
-              class="tintero-mini-link"
-              href="https://www.instagram.com/Delirio_revista/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @DELIRIO_REVISTA
-            </a>
-          </section>
-
-          <!-- Anuncio -->
-          <section class="tintero-mini-section">
-            <h2 class="tintero-mini-heading">Anuncio</h2>
-
-            <a href="ANUNCIO.html" class="tintero-mini-ad">
-              ¿Es lícito un beso con los ojos abiertos?
-            </a>
-          </section>
-
-          <!-- Cumpleaños -->
-          <section class="tintero-mini-section">
-            <h2 class="tintero-mini-heading">Celebración</h2>
-
-            <p class="tintero-mini-text">
-              100 días de Delirio, revista digital.
-            </p>
-          </section>
-
-          <!-- Acceso a autores -->
-          <section class="tintero-mini-section">
-            <h2 class="tintero-mini-heading">Autores</h2>
-
-            <p class="tintero-mini-text">
-              Conoce a quienes escriben en Delirio.
-            </p>
-
-            <a class="tintero-mini-link" href="autores.html">
-              VER AUTORES
-            </a>
-          </section>
-
-        </aside>
-      </div>
-
-      <!-- =================================================
-           PIE DE PÁGINA
-           ================================================= -->
-
-      <footer class="tintero-footer">
-
-        <div class="tintero-footer-inner">
-
-          <nav class="tintero-footer-nav" aria-label="Enlaces del pie de página">
-            <a
-              href="https://www.instagram.com/Delirio_revista/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-
-            <a href="blog.html">Blog</a>
-            <a href="revista.html">Revista</a>
-            <a href="poesia.html">Poesía</a>
-          </nav>
-
-          <a href="index.html" aria-label="Volver al inicio">
-            <img
-              class="tintero-footer-logo"
-              src="imagenes/LOGOSINFONDO.png"
-              alt="Delirio"
-            >
-          </a>
-
-          <p class="tintero-footer-description">
-            Revista digital independiente.
-            Literatura, escritura y otras formas de mirar.
-          </p>
-
-        </div>
-
-        <p class="tintero-footer-bottom">
-          © Delirio, revista digital.
-          Todos los derechos reservados.
-        </p>
-
-      </footer>
-
-    </main>
+</div>
+
+<!-- =====================================================
+     PÁGINA
+     ===================================================== -->
+
+<div class="page-wrap" id="pageWrap">
+<main class="page" id="page">
+
+<div class="banner-space"></div>
+
+<!-- ENCABEZADO DE LA SECCIÓN -->
+
+<section class="header">
+  <div class="section-heading">
+    <img
+      alt="Tintero"
+      src="imagenes/tinterosop.png"
+      style="width:300px;height:auto;"
+    >
+  </div>
+  <div class="main-line"></div>
+</section>
+
+<!-- =====================================================
+     CONTENIDO
+     La entrada de blog se sustituye por la portada.
+     ===================================================== -->
+
+<section class="content">
+
+<div class="article-main">
+
+  <div class="entry-top">
+    <div class="breadcrumb">
+      <a href="index.html">INICIO</a> /
+      <a href="tintero.html">TINTERO</a>
+    </div>
   </div>
 
-  <!-- JavaScript general de Delirio -->
-  <script src="delirio.js"></script>
+  <section class="tintero-cover" aria-label="Portada de Tintero">
 
+    <!-- PUBLICACIÓN 1: RELATO -->
+
+    <article class="tc-story tc-top-left">
+      <a href="PAGINA_RELATO_01.html">
+
+        <div class="tc-image-wrap">
+          <img
+            class="tc-image"
+            src="imagenes/tintero_relato_01.jpg"
+            alt="Imagen del primer relato"
+          >
+        </div>
+
+        <p class="tc-category">RELATO</p>
+        <p class="tc-author">NOMBRE DEL AUTOR</p>
+        <h2 class="tc-title">Título</h2>
+
+      </a>
+    </article>
+
+    <!-- PUBLICACIÓN 2: RELATO -->
+
+    <article class="tc-story tc-top-right">
+      <a href="PAGINA_RELATO_02.html">
+
+        <div class="tc-image-wrap">
+          <img
+            class="tc-image"
+            src="imagenes/tintero_relato_02.jpg"
+            alt="Imagen del segundo relato"
+          >
+        </div>
+
+        <p class="tc-category">RELATO</p>
+        <p class="tc-author">DAVID PAREDES HERNÁNDEZ</p>
+        <h2 class="tc-title">Título</h2>
+
+      </a>
+    </article>
+
+    <!-- TÍTULO CENTRAL
+         El logotipo de Delirio ya está en fondo_tintero.png. -->
+
+    <div class="tc-masthead">
+      <h1 class="tc-masthead-title">Tintero</h1>
+      <p class="tc-masthead-subtitle">Sección quincenal</p>
+    </div>
+
+    <!-- PUBLICACIÓN 3: OPINIÓN -->
+
+    <article class="tc-story tc-middle tc-middle-left">
+      <a href="PAGINA_OPINION.html">
+
+        <div class="tc-image-wrap">
+          <img
+            class="tc-image"
+            src="imagenes/tintero_opinion.jpg"
+            alt="Imagen de la publicación de opinión"
+          >
+        </div>
+
+        <p class="tc-category">OPINIÓN</p>
+        <p class="tc-author">MEREDITH VILLALBA</p>
+        <h2 class="tc-title">Título</h2>
+
+      </a>
+    </article>
+
+    <!-- PUBLICACIÓN 4: POESÍA -->
+
+    <article class="tc-story tc-middle tc-middle-center">
+      <a href="PAGINA_POESIA.html">
+
+        <div class="tc-image-wrap">
+          <img
+            class="tc-image"
+            src="imagenes/tintero_poesia.jpg"
+            alt="Imagen de la publicación de poesía"
+          >
+        </div>
+
+        <p class="tc-category">POESÍA</p>
+        <p class="tc-author">NATALIA REGNIER</p>
+        <h2 class="tc-title">Título</h2>
+
+      </a>
+    </article>
+
+    <!-- PUBLICACIÓN 5: REDACCIÓN -->
+
+    <article class="tc-story tc-middle tc-middle-right">
+      <a href="PAGINA_REDACCION.html">
+
+        <div class="tc-image-wrap">
+          <img
+            class="tc-image"
+            src="imagenes/tintero_redaccion.jpg"
+            alt="Imagen de la publicación de redacción"
+          >
+        </div>
+
+        <p class="tc-category">REDACCIÓN</p>
+        <p class="tc-author">ULISES BURGO</p>
+        <h2 class="tc-title">Título</h2>
+
+      </a>
+    </article>
+
+    <!-- PUBLICACIÓN DESTACADA -->
+
+    <article class="tc-story tc-feature">
+      <a href="PAGINA_POESIA_DESTACADA.html">
+
+        <div class="tc-image-wrap">
+          <img
+            class="tc-image"
+            src="imagenes/tintero_poesia_02.jpg"
+            alt="Imagen de la publicación destacada"
+          >
+        </div>
+
+        <p class="tc-category">POESÍA</p>
+        <h2 class="tc-title">Eres tú</h2>
+
+        <p class="tc-frequency">Sección quincenal</p>
+        <p class="tc-edition-date">Octubre 11, 2026 / No. 1</p>
+
+      </a>
+    </article>
+
+    <!-- DIRECCIÓN DEL SITIO -->
+
+    <p class="tc-url">
+      <a
+        href="https://deliriodig.github.io/revista-delirio/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >https://deliriodig.github.io/revista-delirio/</a>
+    </p>
+
+  </section>
+</div>
+
+<!-- =====================================================
+     MINI: SE CONSERVA LA BARRA LATERAL ORIGINAL
+     ===================================================== -->
+
+<aside class="mini">
+
+  <img
+    alt="Portada de agosto"
+    class="cover"
+    src="imagenes/PORTADA-AGO.png"
+  >
+
+  <h3 class="mini-title">AGOSTO 2026</h3>
+
+  <a class="mini-box mini-link" href="SR_01.html">
+    <h3>COLABORACIÓN</h3>
+    <p><span class="star">★</span>Desorden mental y una pizca de creatividad</p>
+    <div class="mini-author">Santiago Riojas</div>
+  </a>
+
+  <a
+    class="instagram"
+    href="https://www.instagram.com/delirio_revista"
+    rel="noopener"
+    target="_blank"
+  >
+    <strong>Delirio</strong>
+    <span>EN INSTAGRAM</span>
+    <span>@Delirio_revista</span>
+  </a>
+
+  <a class="mini-box mini-link" href="NR_01.html">
+    <h3><em>Birdie</em></h3>
+    <p>Si vuelves, si me buscas, si regresas, no importa cuando, ni como, dime donde, que solo quiero eso. Yo dejaré que me encuentres. Casi no le tengo miedo a nada; pero nunca dejar de sentir esto me tiene aterrada. Sé que mereces el amor que yo te ofrezco, pero yo, no merezco el fallido intento de amor que te agradezco; aún así vuelve, que siento que me ahogo.</p>
+    <div class="mini-author">Natalia Regnier</div>
+  </a>
+
+  <div class="ad">ANUNCIO</div>
+
+  <div class="birthday">
+    <div class="day">16</div>
+    <div class="month">AGOSTO</div>
+    <div class="name">DAVID PAREDES HERNÁNDEZ</div>
+    <small>CUMPLEAÑOS<br>CREADOR DE ESTA REVISTA</small>
+  </div>
+
+  <div class="mini-access">
+    <a href="autores.html">AUTORES</a>
+  </div>
+
+</aside>
+</section>
+
+<!-- =====================================================
+     PIE DE PÁGINA
+     ===================================================== -->
+
+<footer class="footer">
+  <div class="footer-instagram">◎</div>
+
+  <div class="footer-links">
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+  </div>
+
+  <img
+    alt="Delirio"
+    class="footer-logo"
+    src="imagenes/LOGOSINFONDO.png"
+  >
+
+  <div class="footer-text">
+    Revista mensual digital para sentir y crear mientras se documenta la vida.<br>
+    Creada en abril de 2026.
+  </div>
+</footer>
+
+</main>
+</div>
+
+<script src="delirio.js"></script>
 </body>
 </html>
