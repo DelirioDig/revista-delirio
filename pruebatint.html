@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -279,7 +280,22 @@
 }
 
 /* =====================================================
+   LISTA DE LOS CINCO ENLACES
+   Conserva los estilos generales de delirio.css.
+   ===================================================== */
+
+.article-main {
+  min-width: 0;
+}
+
+.blog-post-list {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =====================================================
    RESPONSIVE
+   Mantiene la portada proporcional en pantallas pequeñas.
    ===================================================== */
 
 @media (max-width: 850px) {
@@ -384,7 +400,9 @@
       </div>
     </div>
 
-    <!-- PORTADA TINTERO -->
+    <!-- =================================================
+         PORTADA
+         ================================================= -->
 
     <section class="tintero-cover" aria-label="Portada de Tintero">
 
@@ -542,10 +560,96 @@
     </section>
     <!-- FIN DE LA PORTADA -->
 
-  </div>
-  <!-- FIN DE LA COLUMNA PRINCIPAL -->
+    <!-- =================================================
+         LOS CINCO ENLACES DEBAJO DE LA PORTADA
+         ================================================= -->
 
-  <!-- MINI: BARRA LATERAL -->
+    <div class="blog-post-list">
+
+      <!-- ENLACE 1 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="DH_02.html"
+        data-title="Título"
+        href="DH_02.html"
+      >
+        <div class="blog-post-info">
+          <div class="blog-post-type">BLOG</div>
+          <h2>Título</h2>
+          <div class="blog-post-date">DAVID PAREDES HERNÁNDEZ</div>
+        </div>
+      </a>
+
+      <!-- ENLACE 2 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="MV_04.html"
+        data-title="El relevo"
+        href="MV_04.html"
+      >
+        <div class="blog-post-info">
+          <div class="blog-post-type">BLOG</div>
+          <h2>El relevo</h2>
+          <div class="blog-post-date">MEREDITH VILLALBA</div>
+        </div>
+      </a>
+
+      <!-- ENLACE 3 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="MV_05.html"
+        data-title="Ítaca"
+        href="MV_05.html"
+      >
+        <div class="blog-post-info">
+          <div class="blog-post-type">CINE, OPINIÓN</div>
+          <h2>Ítaca</h2>
+          <div class="blog-post-date">MEREDITH VILLALBA</div>
+        </div>
+      </a>
+
+      <!-- ENLACE 4 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="NR_03.html"
+        data-title="Silvana"
+        href="NR_03.html"
+      >
+        <div class="blog-post-info">
+          <div class="blog-post-type">POESÍA</div>
+          <h2>Silvana</h2>
+          <div class="blog-post-date">NATALIA REGNIER</div>
+        </div>
+      </a>
+
+      <!-- ENLACE 5 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="UB_02.html"
+        data-title="Título"
+        href="UB_02.html"
+      >
+        <div class="blog-post-info">
+          <div class="blog-post-type">BLOG</div>
+          <h2>Título</h2>
+          <div class="blog-post-date">ULISES BURGO</div>
+        </div>
+      </a>
+
+    </div>
+    <!-- FIN DE LOS CINCO ENLACES -->
+
+  </div>
+  <!-- FIN DE ARTICLE-MAIN -->
+
+  <!-- ===================================================
+       MINI: BARRA LATERAL ORIGINAL
+       =================================================== -->
 
   <aside class="mini">
 
@@ -594,10 +698,10 @@
     </div>
 
   </aside>
-  <!-- FIN DE LA BARRA LATERAL -->
+  <!-- FIN DE MINI -->
 
 </section>
-<!-- FIN DE .content -->
+<!-- FIN DE CONTENT -->
 
 <!-- PIE DE PÁGINA -->
 
