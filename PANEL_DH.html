@@ -45,7 +45,6 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-
   width: 100%;
   padding: 10px 0 30px;
   box-sizing: border-box;
@@ -64,16 +63,17 @@
   width: 100%;
   min-height: 125px;
   padding: 20px;
-
   box-sizing: border-box;
 
   border: 1px solid var(--linea, #111);
+  border-radius: 0;
   background: var(--fondo, #f8f7f5);
   color: var(--texto, #111);
 
   font-family: 'Cairo', sans-serif;
   text-align: left;
   text-decoration: none;
+  cursor: pointer;
 
   transition:
     background-color 0.2s ease,
@@ -92,14 +92,13 @@
   height: 54px;
 
   color: var(--rojo, #c14e59);
-
   font-family: 'Cairo', sans-serif;
   font-size: 35px;
   font-weight: 500;
   line-height: 1;
 }
 
-/* CONTENIDO */
+/* CONTENIDO DEL BOTÓN */
 
 .panel-button-content {
   display: flex;
@@ -113,7 +112,6 @@
 .panel-button-title {
   display: block;
   margin: 0;
-
   color: inherit;
 
   font-family: 'Cairo', sans-serif;
@@ -127,7 +125,6 @@
 .panel-button-description {
   display: block;
   margin: 0;
-
   color: inherit;
   opacity: 0.75;
 
@@ -152,6 +149,93 @@
 .panel-button:focus-visible {
   outline: 2px solid var(--rojo, #c14e59);
   outline-offset: 4px;
+}
+
+/* BOTÓN ACTIVO */
+
+.panel-button[aria-expanded="true"] {
+  background: var(--rojo, #c14e59);
+  border-color: var(--rojo, #c14e59);
+  color: #fff;
+}
+
+.panel-button[aria-expanded="true"] .panel-button-icon {
+  color: #fff;
+}
+
+/* =====================================================
+   APARTADO DESPLEGABLE
+   ===================================================== */
+
+.panel-text-section {
+  display: none;
+  width: 100%;
+  margin: 0 0 35px;
+  box-sizing: border-box;
+  scroll-margin-top: 115px;
+}
+
+.panel-text-section.is-visible {
+  display: block;
+  animation: panelAppear 0.3s ease;
+}
+
+@keyframes panelAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LÍNEA DIVISORIA */
+
+.panel-text-line {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 22px;
+  background: var(--linea, #111);
+}
+
+/* SUBTÍTULO */
+
+.panel-text-subtitle {
+  margin: 0 0 15px;
+  color: var(--texto, #111);
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* CUADRO DE INFORMACIÓN FIJA */
+
+.panel-textarea {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--linea, #111);
+  border-radius: 0;
+
+  background: var(--fondo, #f8f7f5);
+  color: var(--texto, #111);
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: default;
 }
 
 /* =====================================================
@@ -194,6 +278,14 @@
     font-size: 13px;
   }
 
+  .panel-text-subtitle {
+    font-size: 17px;
+  }
+
+  .panel-textarea {
+    min-height: 200px;
+    font-size: 14px;
+  }
 }
 </style>
 </head>
@@ -267,7 +359,7 @@
 
     <div class="article-main">
 
-      <!-- PERSONALIZA LOS DATOS DEL AUTOR -->
+      <!-- PRESENTACIÓN DEL AUTOR -->
 
       <div class="panel-intro">
 
@@ -283,8 +375,9 @@
       </div>
 
       <!-- =================================================
-           SEIS BOTONES PERSONALIZABLES
-           Cambia símbolo, título, descripción y href.
+           SEIS BOTONES
+           Los dos primeros llevan a otras páginas.
+           Los últimos cuatro muestran información fija.
            ================================================= -->
 
       <div class="panel-buttons">
@@ -331,29 +424,43 @@
 
         <!-- BOTÓN 3 -->
 
-        <a class="panel-button" href="TAR_DH.html">
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="COMENTARIOS EN TUS PUBLICACIONES"
+          data-text="SIN COMENTARIOS"
+        >
 
-          <span class="panel-button-icon" aria-hidden="true">✉</span>
+          <span class="panel-button-icon" aria-hidden="true">💬</span>
 
           <span class="panel-button-content">
 
             <span class="panel-button-title">
-              TU TARJETA PERSONAL
+              COMENTARIOS EN TUS PUBLICACIONES
             </span>
 
             <span class="panel-button-description">
-              Descubre tu tarjeta dentro de Delirio.
+              Revisa los comentarios realizados en tus publicaciones.
             </span>
 
           </span>
 
-        </a>
+        </button>
 
         <!-- BOTÓN 4 -->
 
-        <a class="panel-button" href="PUBLI_DH.html">
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="TUS PUBLICACIONES"
+          data-text="Mis pasos se graban ahí, 20.08.2026, en AVIARIO"
+        >
 
-          <span class="panel-button-icon" aria-hidden="true">☆</span>
+          <span class="panel-button-icon" aria-hidden="true">⌨</span>
 
           <span class="panel-button-content">
 
@@ -362,16 +469,24 @@
             </span>
 
             <span class="panel-button-description">
-              Revisa lo que has publicado y ,en su caso, solicita su eliminación.
+              Revisa lo que has publicado y, en su caso,
+              solicita su eliminación.
             </span>
 
           </span>
 
-        </a>
+        </button>
 
         <!-- BOTÓN 5 -->
 
-        <a class="panel-button" href="REV_DH">
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="TEXTOS EN REVISIÓN"
+          data-text="No tienes ningún texto pendiente de publicación"
+        >
 
           <span class="panel-button-icon" aria-hidden="true">⌕</span>
 
@@ -387,29 +502,65 @@
 
           </span>
 
-        </a>
+        </button>
 
         <!-- BOTÓN 6 -->
 
-        <a class="panel-button" href="IMAG_DH.html">
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="TUS IMÁGENES DE PERFIL"
+          data-text="Puedes revisar tu imagen en tu perfil"
+        >
 
-          <span class="panel-button-icon" aria-hidden="true">↗</span>
+          <span class="panel-button-icon" aria-hidden="true">👤</span>
 
           <span class="panel-button-content">
 
             <span class="panel-button-title">
-              TUS IMAGENES DE PERIL
+              TUS IMÁGENES DE PERFIL
             </span>
 
             <span class="panel-button-description">
-              Revisa tus imágenes de perfil y, en su caso, solicita su cambio.
+              Revisa tus imagen de perfil y, en su caso,
+              solicita su cambio.
             </span>
 
           </span>
 
-        </a>
+        </button>
 
       </div>
+
+      <!-- =================================================
+           APARTADO DE INFORMACIÓN FIJA
+           Aparece debajo de los seis botones.
+           ================================================= -->
+
+      <section
+        class="panel-text-section"
+        id="panelTextSection"
+        aria-hidden="true"
+      >
+
+        <div class="panel-text-line"></div>
+
+        <h2
+          class="panel-text-subtitle"
+          id="panelTextSubtitle"
+        >
+          TU TARJETA PERSONAL
+        </h2>
+
+        <div
+          class="panel-textarea"
+          id="panelTextarea"
+          role="status"
+        ></div>
+
+      </section>
 
     </div>
 
@@ -515,6 +666,73 @@
 
 </main>
 </div>
+
+<!-- =================================================
+     FUNCIONAMIENTO DE LOS BOTONES DESPLEGABLES
+     ================================================= -->
+
+<script>
+(function () {
+
+  const botones = document.querySelectorAll(".panel-toggle");
+  const apartado = document.getElementById("panelTextSection");
+  const subtitulo = document.getElementById("panelTextSubtitle");
+  const cuadro = document.getElementById("panelTextarea");
+
+  if (!botones.length || !apartado || !subtitulo || !cuadro) {
+    return;
+  }
+
+  botones.forEach(function (boton) {
+
+    boton.addEventListener("click", function () {
+
+      const yaAbierto =
+        boton.getAttribute("aria-expanded") === "true";
+
+      /* Cierra el estado activo de todos los botones */
+
+      botones.forEach(function (otroBoton) {
+        otroBoton.setAttribute("aria-expanded", "false");
+      });
+
+      /* Si se toca de nuevo el botón activo, se cierra */
+
+      if (yaAbierto) {
+        apartado.classList.remove("is-visible");
+        apartado.setAttribute("aria-hidden", "true");
+        return;
+      }
+
+      /* Actualiza el subtítulo y la información fija */
+
+      subtitulo.textContent =
+        boton.dataset.subtitle || "INFORMACIÓN";
+
+      cuadro.textContent =
+        boton.dataset.text || "No hay información disponible.";
+
+      /* Muestra el apartado */
+
+      boton.setAttribute("aria-expanded", "true");
+      apartado.classList.add("is-visible");
+      apartado.setAttribute("aria-hidden", "false");
+
+      /* Desplaza la página hasta el apartado */
+
+      window.requestAnimationFrame(function () {
+        apartado.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+
+    });
+
+  });
+
+})();
+</script>
 
 <script src="delirio.js"></script>
 
