@@ -120,7 +120,7 @@
       texto: "REVISTA<br>DIGITAL"
     },
     acceso: {
-      autores: "autores.html",
+      autores: "acceso-autores.html",
     }
   };
 
@@ -158,7 +158,7 @@
       texto: "REVISTA<br>DIGITAL"
     },
     acceso: {
-      autores: "autores.html",
+      autores: "acceso-autores.html",
     }
   };
 
