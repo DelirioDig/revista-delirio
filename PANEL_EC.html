@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel de Elizabeth C. | Delirio</title>
+
+<link rel="stylesheet" href="delirio.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================
+   ENCABEZADO DEL PANEL
+   ===================================================== */
+
+.panel-intro {
+  margin: 15px 0 30px;
+}
+
+.panel-author {
+  margin: 0 0 8px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--texto, #111);
+}
+
+.panel-description {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--texto, #111);
+}
+
+/* =====================================================
+   CUADRÍCULA DE BOTONES
+   ===================================================== */
+
+.panel-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+
+  width: 100%;
+  padding: 10px 0 30px;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BOTÓN INDIVIDUAL
+   ===================================================== */
+
+.panel-button {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  min-height: 125px;
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--linea, #111);
+  background: var(--fondo, #f8f7f5);
+  color: var(--texto, #111);
+
+  font-family: 'Cairo', sans-serif;
+  text-align: left;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* SÍMBOLO */
+
+.panel-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 54px;
+  height: 54px;
+
+  color: var(--rojo, #c14e59);
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* CONTENIDO */
+
+.panel-button-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+/* TÍTULO */
+
+.panel-button-title {
+  display: block;
+  margin: 0;
+
+  color: inherit;
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* DESCRIPCIÓN */
+
+.panel-button-description {
+  display: block;
+  margin: 0;
+
+  color: inherit;
+  opacity: 0.75;
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* INTERACCIÓN */
+
+.panel-button:hover {
+  background: var(--rojo, #c14e59);
+  border-color: var(--rojo, #c14e59);
+  color: #fff;
+}
+
+.panel-button:hover .panel-button-icon {
+  color: #fff;
+}
+
+.panel-button:focus-visible {
+  outline: 2px solid var(--rojo, #c14e59);
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   MÓVILES
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .panel-intro {
+    margin-top: 10px;
+  }
+
+  .panel-author {
+    font-size: 22px;
+  }
+
+  .panel-buttons {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .panel-button {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 13px;
+    min-height: 108px;
+    padding: 16px;
+  }
+
+  .panel-button-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 31px;
+  }
+
+  .panel-button-title {
+    font-size: 17px;
+  }
+
+  .panel-button-description {
+    font-size: 13px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =================================================
+     ENCABEZADO
+     ================================================= -->
+
+<header id="top-banner">
+
+  <button aria-label="Menú" class="banner-menu" id="menuButton">
+    <span></span><span></span><span></span>
+  </button>
+
+  <a href="index.html">
+    <img
+      alt="Delirio"
+      class="banner-logo"
+      src="imagenes/LOGOSINFONDO.png"
+    >
+  </a>
+
+  <a class="edicion" href="revista.html">
+    EDICIÓN<br>ACTUAL
+  </a>
+
+  <button
+    aria-label="Buscar"
+    class="lupa-banner"
+    id="bannerSearch"
+  ></button>
+
+</header>
+
+<!-- =================================================
+     MENÚ
+     ================================================= -->
+
+<div class="menu-panel" id="menuPanel">
+
+  <button class="menu-close" id="menuClose">×</button>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+    <a href="cine.html">Cine</a>
+    <a href="narrativa.html">Narrativa</a>
+  </nav>
+
+</div>
+
+<!-- =================================================
+     CONTENIDO PRINCIPAL
+     ================================================= -->
+
+<div class="page-wrap" id="pageWrap">
+<main class="page" id="page">
+
+  <div class="banner-space"></div>
+
+  <section class="header">
+    <div class="section-heading">HOLA, ELI</div>
+    <div class="main-line"></div>
+  </section>
+
+  <section class="content">
+
+    <div class="article-main">
+
+      <!-- PERSONALIZA LOS DATOS DEL AUTOR -->
+
+      <div class="panel-intro">
+
+        <h1 class="panel-author">
+          Elizabeth Campos
+        </h1>
+
+        <p class="panel-description">
+          Bienvenido a tu espacio de trabajo en Delirio.
+          Selecciona una opción para continuar.
+        </p>
+
+      </div>
+
+      <!-- =================================================
+           SEIS BOTONES PERSONALIZABLES
+           Cambia símbolo, título, descripción y href.
+           ================================================= -->
+
+      <div class="panel-buttons">
+
+        <!-- BOTÓN 1 -->
+
+        <a class="panel-button" href="autores.html">
+
+          <span class="panel-button-icon" aria-hidden="true">✎</span>
+
+          <span class="panel-button-content">
+
+            <span class="panel-button-title">
+              ENVÍO DE TEXTO
+            </span>
+
+            <span class="panel-button-description">
+              Envía un texto para su publicación.
+            </span>
+
+          </span>
+
+        </a>
+
+        <!-- BOTÓN 2 -->
+
+        <a class="panel-button" href="A-Elizabeth-C.html">
+
+          <span class="panel-button-icon" aria-hidden="true">▤</span>
+
+          <span class="panel-button-content">
+
+            <span class="panel-button-title">
+              TU PERFIL
+            </span>
+
+            <span class="panel-button-description">
+              Visita tu perfil.
+            </span>
+
+          </span>
+
+        </a>
+
+        <!-- BOTÓN 3 -->
+
+        <a class="panel-button" href="TAR_EC.html">
+
+          <span class="panel-button-icon" aria-hidden="true">✉</span>
+
+          <span class="panel-button-content">
+
+            <span class="panel-button-title">
+              TU TARJETA PERSONAL
+            </span>
+
+            <span class="panel-button-description">
+              Descubre tu tarjeta dentro de Delirio.
+            </span>
+
+          </span>
+
+        </a>
+
+        <!-- BOTÓN 4 -->
+
+        <a class="panel-button" href="PUBLI_EC.html">
+
+          <span class="panel-button-icon" aria-hidden="true">☆</span>
+
+          <span class="panel-button-content">
+
+            <span class="panel-button-title">
+              TUS PUBLICACIONES
+            </span>
+
+            <span class="panel-button-description">
+              Revisa lo que has publicado y ,en su caso, solicita su eliminación.
+            </span>
+
+          </span>
+
+        </a>
+
+        <!-- BOTÓN 5 -->
+
+        <a class="panel-button" href="REV_EC.html">
+
+          <span class="panel-button-icon" aria-hidden="true">⌕</span>
+
+          <span class="panel-button-content">
+
+            <span class="panel-button-title">
+              EN REVISIÓN
+            </span>
+
+            <span class="panel-button-description">
+              Revisa las publicaciones que has enviado.
+            </span>
+
+          </span>
+
+        </a>
+
+        <!-- BOTÓN 6 -->
+
+        <a class="panel-button" href="IMAG_EC.html">
+
+          <span class="panel-button-icon" aria-hidden="true">↗</span>
+
+          <span class="panel-button-content">
+
+            <span class="panel-button-title">
+              TUS IMAGENES DE PERIL
+            </span>
+
+            <span class="panel-button-description">
+              Revisa tus imágenes de perfil y, en su caso, solicita su cambio.
+            </span>
+
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- =================================================
+         COLUMNA LATERAL
+         ================================================= -->
+
+    <aside class="mini">
+
+      <img
+        alt="Portada de agosto"
+        class="cover"
+        src="imagenes/PORTADA-AGO.png"
+      >
+
+      <h3 class="mini-title">AGOSTO 2026</h3>
+
+      <a class="mini-box mini-link" href="SR_01.html">
+
+        <h3>COLABORACIÓN</h3>
+
+        <p>
+          <span class="star">★</span>
+          Desorden mental y una pizca de creatividad
+        </p>
+
+        <div class="mini-author">Santiago Riojas</div>
+
+      </a>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/delirio_revista"
+        target="_blank"
+        rel="noopener"
+      >
+        <strong>Delirio</strong>
+        <span>EN INSTAGRAM</span>
+        <span>@Delirio_revista</span>
+      </a>
+
+      <a class="mini-box mini-link" href="NR_01.html">
+
+        <h3><em>Birdie</em></h3>
+
+        <p>
+          Si vuelves, si me buscas, si regresas, no importa
+          cuando, ni como, dime donde, que solo quiero eso.
+          Yo dejaré que me encuentres.
+        </p>
+
+        <div class="mini-author">Natalia Regnier</div>
+
+      </a>
+
+      <div class="ad">ANUNCIO</div>
+
+      <div class="birthday">
+        <div class="day">16</div>
+        <div class="month">AGOSTO</div>
+        <div class="name">DAVID PAREDES HERNÁNDEZ</div>
+
+        <small>
+          CUMPLEAÑOS<br>
+          CREADOR DE ESTA REVISTA
+        </small>
+      </div>
+
+      <div class="mini-access">
+        <a href="autores.html">AUTORES</a>
+      </div>
+
+    </aside>
+
+  </section>
+
+  <!-- =================================================
+       PIE DE PÁGINA
+       ================================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-instagram">◎</div>
+
+    <div class="footer-links">
+      <a href="blog.html">Blog</a>
+      <a href="revista.html">Revista</a>
+      <a href="poesia.html">Poesía</a>
+    </div>
+
+    <img
+      alt="Delirio"
+      class="footer-logo"
+      src="imagenes/LOGOSINFONDO.png"
+    >
+
+    <div class="footer-text">
+      Revista mensual digital para sentir y crear mientras se documenta la vida.<br>
+      Creada en abril de 2026.
+    </div>
+
+  </footer>
+
+</main>
+</div>
+
+<script src="delirio.js"></script>
+
+</body>
+</html>
+```
