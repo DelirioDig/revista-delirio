@@ -13,19 +13,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* IMÁGENES DENTRO DEL CONTENIDO DESPLEGABLE */
+
+/* =====================================================
+   IMÁGENES DENTRO DEL CONTENIDO DESPLEGABLE
+   ===================================================== */
 
 .panel-content-image {
   display: block;
-
   width: 150px;
   max-width: 100%;
   height: auto;
-
   margin: 18px 0;
-
   object-fit: contain;
 }
+
 /* =====================================================
    ENCABEZADO DEL PANEL
    ===================================================== */
@@ -300,6 +301,7 @@
     font-size: 14px;
   }
 }
+
 </style>
 </head>
 
@@ -389,13 +391,11 @@
 
       <!-- =================================================
            SEIS BOTONES
-           Los dos primeros llevan a otras páginas.
-           Los últimos cuatro muestran información fija.
            ================================================= -->
 
       <div class="panel-buttons">
 
-        <!-- BOTÓN 1 -->
+        <!-- BOTÓN 1: ENVÍO DE TEXTO -->
 
         <a class="panel-button" href="autores.html">
 
@@ -415,7 +415,7 @@
 
         </a>
 
-        <!-- BOTÓN 2 -->
+        <!-- BOTÓN 2: TU PERFIL -->
 
         <a class="panel-button" href="A-David-H.html">
 
@@ -435,7 +435,7 @@
 
         </a>
 
-        <!-- BOTÓN 3 -->
+        <!-- BOTÓN 3: COMENTARIOS -->
 
         <button
           class="panel-button panel-toggle"
@@ -459,13 +459,13 @@
 
           </span>
 
-          <!-- INFORMACIÓN FIJA DEL APARTADO -->
-  <template class="panel-template">
-    <p>SIN COMENTARIOS.</p>
-  </template>
-</button>
+          <template class="panel-template">
+            <p>SIN COMENTARIOS.</p>
+          </template>
 
-        <!-- BOTÓN 4 -->
+        </button>
+
+        <!-- BOTÓN 4: TUS PUBLICACIONES -->
 
         <button
           class="panel-button panel-toggle"
@@ -489,14 +489,14 @@
             </span>
 
           </span>
-           
-          <!-- INFORMACIÓN FIJA DEL APARTADO -->
-  <template class="panel-template">
-    <p>• <i>Mis pasos se graban ahí</i>, el 20.08.2026, en AVIARIO.</p>
-  </template>
-</button>
 
-        <!-- BOTÓN 5 -->
+          <template class="panel-template">
+            <p>• <i>Mis pasos se graban ahí</i>, el 20.08.2026, en AVIARIO.</p>
+          </template>
+
+        </button>
+
+        <!-- BOTÓN 5: EN REVISIÓN -->
 
         <button
           class="panel-button panel-toggle"
@@ -520,13 +520,13 @@
 
           </span>
 
-           <!-- INFORMACIÓN FIJA DEL APARTADO -->
-  <template class="panel-template">
-    <p>• NINGUNA PUBLICACIÓN PENDIENTE</p>
-  </template>
-</button>
+          <template class="panel-template">
+            <p>• NINGUNA PUBLICACIÓN PENDIENTE</p>
+          </template>
 
-        <!-- BOTÓN 6 -->
+        </button>
+
+        <!-- BOTÓN 6: TUS IMÁGENES DE PERFIL -->
 
         <button
           class="panel-button panel-toggle"
@@ -551,25 +551,26 @@
 
           </span>
 
-           <!-- INFORMACIÓN FIJA DEL APARTADO -->
-  <template class="panel-template">
-    <p>• Puedes solicitar el cambio de imagen con la administración de la página.</p>
+          <template class="panel-template">
 
-     <!-- IMAGEN -->
-    <img
-      src="imagenes/PERFIL_DH.png"
-      alt="Utilizada en tu perfil y publicaciones."
-      class="panel-content-image"
-    >
-     
-  </template>
-</button>
+            <p>
+              • Puedes solicitar el cambio de imagen con la administración de la página.
+            </p>
+
+            <img
+              src="imagenes/PERFIL_DH.png"
+              alt="Imagen utilizada en tu perfil y publicaciones."
+              class="panel-content-image"
+            >
+
+          </template>
+
+        </button>
 
       </div>
 
       <!-- =================================================
            APARTADO DE INFORMACIÓN FIJA
-           Aparece debajo de los seis botones.
            ================================================= -->
 
       <section
@@ -584,7 +585,7 @@
           class="panel-text-subtitle"
           id="panelTextSubtitle"
         >
-          TU TARJETA PERSONAL
+          SELECCIONA UNA OPCIÓN
         </h2>
 
         <div
@@ -734,16 +735,32 @@
       if (yaAbierto) {
         apartado.classList.remove("is-visible");
         apartado.setAttribute("aria-hidden", "true");
+        cuadro.replaceChildren();
         return;
       }
 
-      /* Actualiza el subtítulo y la información fija */
+      /* Actualiza el subtítulo */
 
       subtitulo.textContent =
         boton.dataset.subtitle || "INFORMACIÓN";
 
-      cuadro.textContent =
-        boton.dataset.text || "No hay información disponible.";
+      /* Obtiene la plantilla del botón seleccionado */
+
+      const plantilla = boton.querySelector(".panel-template");
+
+      /* Limpia el contenido anterior */
+
+      cuadro.replaceChildren();
+
+      /* Inserta el texto, formato e imágenes de la plantilla */
+
+      if (plantilla) {
+        cuadro.appendChild(
+          plantilla.content.cloneNode(true)
+        );
+      } else {
+        cuadro.textContent = "No hay información disponible.";
+      }
 
       /* Muestra el apartado */
 
@@ -771,4 +788,3 @@
 
 </body>
 </html>
-```
