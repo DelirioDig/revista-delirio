@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Panel de Elizabeth C. | Delirio</title>
+<title>Panel de Elizabeth Campos | Delirio</title>
 
 <link rel="stylesheet" href="delirio.css">
 
@@ -13,6 +14,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   IMÁGENES DENTRO DEL CONTENIDO DESPLEGABLE
+   ===================================================== */
+
+.panel-content-image {
+  display: block;
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  margin: 18px 0;
+  object-fit: contain;
+}
+
 /* =====================================================
    ENCABEZADO DEL PANEL
    ===================================================== */
@@ -45,7 +60,6 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-
   width: 100%;
   padding: 10px 0 30px;
   box-sizing: border-box;
@@ -64,16 +78,17 @@
   width: 100%;
   min-height: 125px;
   padding: 20px;
-
   box-sizing: border-box;
 
   border: 1px solid var(--linea, #111);
+  border-radius: 0;
   background: var(--fondo, #f8f7f5);
   color: var(--texto, #111);
 
   font-family: 'Cairo', sans-serif;
   text-align: left;
   text-decoration: none;
+  cursor: pointer;
 
   transition:
     background-color 0.2s ease,
@@ -92,14 +107,13 @@
   height: 54px;
 
   color: var(--rojo, #c14e59);
-
   font-family: 'Cairo', sans-serif;
   font-size: 35px;
   font-weight: 500;
   line-height: 1;
 }
 
-/* CONTENIDO */
+/* CONTENIDO DEL BOTÓN */
 
 .panel-button-content {
   display: flex;
@@ -113,7 +127,6 @@
 .panel-button-title {
   display: block;
   margin: 0;
-
   color: inherit;
 
   font-family: 'Cairo', sans-serif;
@@ -127,7 +140,6 @@
 .panel-button-description {
   display: block;
   margin: 0;
-
   color: inherit;
   opacity: 0.75;
 
@@ -152,6 +164,93 @@
 .panel-button:focus-visible {
   outline: 2px solid var(--rojo, #c14e59);
   outline-offset: 4px;
+}
+
+/* BOTÓN ACTIVO */
+
+.panel-button[aria-expanded="true"] {
+  background: var(--rojo, #c14e59);
+  border-color: var(--rojo, #c14e59);
+  color: #fff;
+}
+
+.panel-button[aria-expanded="true"] .panel-button-icon {
+  color: #fff;
+}
+
+/* =====================================================
+   APARTADO DESPLEGABLE
+   ===================================================== */
+
+.panel-text-section {
+  display: none;
+  width: 100%;
+  margin: 0 0 35px;
+  box-sizing: border-box;
+  scroll-margin-top: 115px;
+}
+
+.panel-text-section.is-visible {
+  display: block;
+  animation: panelAppear 0.3s ease;
+}
+
+@keyframes panelAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LÍNEA DIVISORIA */
+
+.panel-text-line {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 22px;
+  background: var(--linea, #111);
+}
+
+/* SUBTÍTULO */
+
+.panel-text-subtitle {
+  margin: 0 0 15px;
+  color: var(--texto, #111);
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* CUADRO DE INFORMACIÓN FIJA */
+
+.panel-textarea {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--linea, #111);
+  border-radius: 0;
+
+  background: var(--fondo, #f8f7f5);
+  color: var(--texto, #111);
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  cursor: default;
 }
 
 /* =====================================================
@@ -194,7 +293,16 @@
     font-size: 13px;
   }
 
+  .panel-text-subtitle {
+    font-size: 17px;
+  }
+
+  .panel-textarea {
+    min-height: 200px;
+    font-size: 14px;
+  }
 }
+
 </style>
 </head>
 
@@ -267,7 +375,7 @@
 
     <div class="article-main">
 
-      <!-- PERSONALIZA LOS DATOS DEL AUTOR -->
+      <!-- PRESENTACIÓN DEL AUTOR -->
 
       <div class="panel-intro">
 
@@ -276,20 +384,19 @@
         </h1>
 
         <p class="panel-description">
-          Bienvenido a tu espacio de trabajo en Delirio.
+          Bienvenida a tu espacio de trabajo en Delirio.
           Selecciona una opción para continuar.
         </p>
 
       </div>
 
       <!-- =================================================
-           SEIS BOTONES PERSONALIZABLES
-           Cambia símbolo, título, descripción y href.
+           SEIS BOTONES
            ================================================= -->
 
       <div class="panel-buttons">
 
-        <!-- BOTÓN 1 -->
+        <!-- BOTÓN 1: ENVÍO DE TEXTO -->
 
         <a class="panel-button" href="autores.html">
 
@@ -309,7 +416,7 @@
 
         </a>
 
-        <!-- BOTÓN 2 -->
+        <!-- BOTÓN 2: TU PERFIL -->
 
         <a class="panel-button" href="A-Elizabeth-C.html">
 
@@ -329,31 +436,47 @@
 
         </a>
 
-        <!-- BOTÓN 3 -->
+        <!-- BOTÓN 3: COMENTARIOS -->
 
-        <a class="panel-button" href="TAR_EC.html">
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="COMENTARIOS EN TUS PUBLICACIONES"
+        >
 
-          <span class="panel-button-icon" aria-hidden="true">✉</span>
+          <span class="panel-button-icon" aria-hidden="true">💬</span>
 
           <span class="panel-button-content">
 
             <span class="panel-button-title">
-              TU TARJETA PERSONAL
+              COMENTARIOS EN TUS PUBLICACIONES
             </span>
 
             <span class="panel-button-description">
-              Descubre tu tarjeta dentro de Delirio.
+              Revisa los comentarios realizados en tus publicaciones.
             </span>
 
           </span>
 
-        </a>
+          <template class="panel-template">
+            <p>SIN COMENTARIOS.</p>
+          </template>
 
-        <!-- BOTÓN 4 -->
+        </button>
 
-        <a class="panel-button" href="PUBLI_EC.html">
+        <!-- BOTÓN 4: TUS PUBLICACIONES -->
 
-          <span class="panel-button-icon" aria-hidden="true">☆</span>
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="TUS PUBLICACIONES"
+        >
+
+          <span class="panel-button-icon" aria-hidden="true">⌨</span>
 
           <span class="panel-button-content">
 
@@ -362,16 +485,27 @@
             </span>
 
             <span class="panel-button-description">
-              Revisa lo que has publicado y ,en su caso, solicita su eliminación.
+              Revisa lo que has publicado y, en su caso,
+              solicita su eliminación.
             </span>
 
           </span>
 
-        </a>
+          <template class="panel-template">
+            <p>• <i>¿Dónde se aprende a olvidar?</i>, el 05.08.2026, en LATIDOS NOCIVOS.</p>
+          </template>
 
-        <!-- BOTÓN 5 -->
+        </button>
 
-        <a class="panel-button" href="REV_EC.html">
+        <!-- BOTÓN 5: EN REVISIÓN -->
+
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="TEXTOS EN REVISIÓN"
+        >
 
           <span class="panel-button-icon" aria-hidden="true">⌕</span>
 
@@ -382,34 +516,86 @@
             </span>
 
             <span class="panel-button-description">
-              Revisa las publicaciones que has enviado.
+              Revisa las publicaciones que has enviado y no se han publicado.
             </span>
 
           </span>
 
-        </a>
+          <template class="panel-template">
+            <p>• NINGUNA PUBLICACIÓN PENDIENTE</p>
+          </template>
 
-        <!-- BOTÓN 6 -->
+        </button>
 
-        <a class="panel-button" href="IMAG_EC.html">
+        <!-- BOTÓN 6: TUS IMÁGENES DE PERFIL -->
 
-          <span class="panel-button-icon" aria-hidden="true">↗</span>
+        <button
+          class="panel-button panel-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="panelTextSection"
+          data-subtitle="TUS IMÁGENES DE PERFIL"
+        >
+
+          <span class="panel-button-icon" aria-hidden="true">👤</span>
 
           <span class="panel-button-content">
 
             <span class="panel-button-title">
-              TUS IMAGENES DE PERIL
+              TUS IMÁGENES DE PERFIL
             </span>
 
             <span class="panel-button-description">
-              Revisa tus imágenes de perfil y, en su caso, solicita su cambio.
+              Revisa tu imagen de perfil y, en su caso,
+              solicita su cambio.
             </span>
 
           </span>
 
-        </a>
+          <template class="panel-template">
+
+            <p>
+              • Puedes solicitar el cambio de imagen con la administración de la página.
+            </p>
+
+            <img
+              src="imagenes/PERFIL_EC.png"
+              alt="Imagen utilizada en tu perfil y publicaciones."
+              class="panel-content-image"
+            >
+
+          </template>
+
+        </button>
 
       </div>
+
+      <!-- =================================================
+           APARTADO DE INFORMACIÓN FIJA
+           ================================================= -->
+
+      <section
+        class="panel-text-section"
+        id="panelTextSection"
+        aria-hidden="true"
+      >
+
+        <div class="panel-text-line"></div>
+
+        <h2
+          class="panel-text-subtitle"
+          id="panelTextSubtitle"
+        >
+          SELECCIONA UNA OPCIÓN
+        </h2>
+
+        <div
+          class="panel-textarea"
+          id="panelTextarea"
+          role="status"
+        ></div>
+
+      </section>
 
     </div>
 
@@ -516,8 +702,90 @@
 </main>
 </div>
 
+<!-- =================================================
+     FUNCIONAMIENTO DE LOS BOTONES DESPLEGABLES
+     ================================================= -->
+
+<script>
+(function () {
+
+  const botones = document.querySelectorAll(".panel-toggle");
+  const apartado = document.getElementById("panelTextSection");
+  const subtitulo = document.getElementById("panelTextSubtitle");
+  const cuadro = document.getElementById("panelTextarea");
+
+  if (!botones.length || !apartado || !subtitulo || !cuadro) {
+    return;
+  }
+
+  botones.forEach(function (boton) {
+
+    boton.addEventListener("click", function () {
+
+      const yaAbierto =
+        boton.getAttribute("aria-expanded") === "true";
+
+      /* Cierra el estado activo de todos los botones */
+
+      botones.forEach(function (otroBoton) {
+        otroBoton.setAttribute("aria-expanded", "false");
+      });
+
+      /* Si se toca de nuevo el botón activo, se cierra */
+
+      if (yaAbierto) {
+        apartado.classList.remove("is-visible");
+        apartado.setAttribute("aria-hidden", "true");
+        cuadro.replaceChildren();
+        return;
+      }
+
+      /* Actualiza el subtítulo */
+
+      subtitulo.textContent =
+        boton.dataset.subtitle || "INFORMACIÓN";
+
+      /* Obtiene la plantilla del botón seleccionado */
+
+      const plantilla = boton.querySelector(".panel-template");
+
+      /* Limpia el contenido anterior */
+
+      cuadro.replaceChildren();
+
+      /* Inserta el texto, formato e imágenes de la plantilla */
+
+      if (plantilla) {
+        cuadro.appendChild(
+          plantilla.content.cloneNode(true)
+        );
+      } else {
+        cuadro.textContent = "No hay información disponible.";
+      }
+
+      /* Muestra el apartado */
+
+      boton.setAttribute("aria-expanded", "true");
+      apartado.classList.add("is-visible");
+      apartado.setAttribute("aria-hidden", "false");
+
+      /* Desplaza la página hasta el apartado */
+
+      window.requestAnimationFrame(function () {
+        apartado.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      });
+
+    });
+
+  });
+
+})();
+</script>
+
 <script src="delirio.js"></script>
 
 </body>
 </html>
-```
