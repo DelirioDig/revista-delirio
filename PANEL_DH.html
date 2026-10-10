@@ -13,6 +13,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+/* IMÁGENES DENTRO DEL CONTENIDO DESPLEGABLE */
+
+.panel-content-image {
+  display: block;
+
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+
+  margin: 18px 0;
+
+  object-fit: contain;
+}
 /* =====================================================
    ENCABEZADO DEL PANEL
    ===================================================== */
@@ -430,7 +443,6 @@
           aria-expanded="false"
           aria-controls="panelTextSection"
           data-subtitle="COMENTARIOS EN TUS PUBLICACIONES"
-          data-text="SIN COMENTARIOS"
         >
 
           <span class="panel-button-icon" aria-hidden="true">💬</span>
@@ -447,7 +459,11 @@
 
           </span>
 
-        </button>
+          <!-- INFORMACIÓN FIJA DEL APARTADO -->
+  <template class="panel-template">
+    <p>SIN COMENTARIOS.</p>
+  </template>
+</button>
 
         <!-- BOTÓN 4 -->
 
@@ -457,7 +473,6 @@
           aria-expanded="false"
           aria-controls="panelTextSection"
           data-subtitle="TUS PUBLICACIONES"
-          data-text="Mis pasos se graban ahí, 20.08.2026, en AVIARIO"
         >
 
           <span class="panel-button-icon" aria-hidden="true">⌨</span>
@@ -474,8 +489,12 @@
             </span>
 
           </span>
-
-        </button>
+           
+          <!-- INFORMACIÓN FIJA DEL APARTADO -->
+  <template class="panel-template">
+    <p>• <i>Mis pasos se graban ahí</i>, el 20.08.2026, en AVIARIO.</p>
+  </template>
+</button>
 
         <!-- BOTÓN 5 -->
 
@@ -485,7 +504,6 @@
           aria-expanded="false"
           aria-controls="panelTextSection"
           data-subtitle="TEXTOS EN REVISIÓN"
-          data-text="No tienes ningún texto pendiente de publicación"
         >
 
           <span class="panel-button-icon" aria-hidden="true">⌕</span>
@@ -497,12 +515,16 @@
             </span>
 
             <span class="panel-button-description">
-              Revisa las publicaciones que has enviado.
+              Revisa las publicaciones que has enviado y no se han publicado.
             </span>
 
           </span>
 
-        </button>
+           <!-- INFORMACIÓN FIJA DEL APARTADO -->
+  <template class="panel-template">
+    <p>• NINGUNA PUBLICACIÓN PENDIENTE</p>
+  </template>
+</button>
 
         <!-- BOTÓN 6 -->
 
@@ -512,7 +534,6 @@
           aria-expanded="false"
           aria-controls="panelTextSection"
           data-subtitle="TUS IMÁGENES DE PERFIL"
-          data-text="Puedes revisar tu imagen en tu perfil"
         >
 
           <span class="panel-button-icon" aria-hidden="true">👤</span>
@@ -530,7 +551,19 @@
 
           </span>
 
-        </button>
+           <!-- INFORMACIÓN FIJA DEL APARTADO -->
+  <template class="panel-template">
+    <p>• Puedes solicitar el cambio de imagen con la administración de la página.</p>
+
+     <!-- IMAGEN -->
+    <img
+      src="imagenes/PERFIL_DH.png"
+      alt="Utilizada en tu perfil y publicaciones."
+      class="panel-content-image"
+    >
+     
+  </template>
+</button>
 
       </div>
 
