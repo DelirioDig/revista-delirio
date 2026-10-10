@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Acceso de autores | Delirio</title>
+
+<link rel="stylesheet" href="delirio.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================
+   ACCESO DE AUTORES
+   ===================================================== */
+
+.access-container {
+  width: 100%;
+  max-width: 560px;
+  margin: 35px auto;
+  font-family: 'Cairo', sans-serif;
+  box-sizing: border-box;
+}
+
+.access-box {
+  padding: 30px;
+  border: 1px solid var(--linea, #111);
+  box-sizing: border-box;
+}
+
+.access-title {
+  margin: 0 0 12px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--texto, #111);
+}
+
+.access-description {
+  margin: 0 0 25px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--texto, #111);
+}
+
+.access-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.access-field label {
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.access-field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--linea, #111);
+  border-radius: 0;
+
+  background: var(--fondo, #f8f7f5);
+  color: var(--texto, #111);
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 15px;
+}
+
+.access-button,
+.guest-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+
+  border: 1px solid var(--rojo, #c14e59);
+  border-radius: 0;
+
+  background: var(--rojo, #c14e59);
+  color: #fff;
+
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.access-button:hover,
+.guest-button:hover {
+  opacity: 0.82;
+}
+
+.access-status {
+  min-height: 22px;
+  margin-top: 12px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--texto, #111);
+}
+
+.guest-container {
+  margin-top: 18px;
+}
+
+.guest-button {
+  background: transparent;
+  color: var(--texto, #111);
+  border-color: var(--linea, #111);
+}
+
+.guest-button:hover {
+  background: var(--rojo, #c14e59);
+  border-color: var(--rojo, #c14e59);
+  color: #fff;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .access-container {
+    margin: 20px auto;
+  }
+
+  .access-box {
+    padding: 22px;
+  }
+
+  .access-title {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =================================================
+     ENCABEZADO
+     ================================================= -->
+
+<header id="top-banner">
+
+  <button aria-label="Menú" class="banner-menu" id="menuButton">
+    <span></span><span></span><span></span>
+  </button>
+
+  <a href="index.html">
+    <img
+      alt="Delirio"
+      class="banner-logo"
+      src="imagenes/LOGOSINFONDO.png"
+    >
+  </a>
+
+  <a class="edicion" href="revista.html">
+    EDICIÓN<br>ACTUAL
+  </a>
+
+  <button
+    aria-label="Buscar"
+    class="lupa-banner"
+    id="bannerSearch"
+  ></button>
+
+</header>
+
+<!-- =================================================
+     MENÚ
+     ================================================= -->
+
+<div class="menu-panel" id="menuPanel">
+
+  <button class="menu-close" id="menuClose">×</button>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+    <a href="cine.html">Cine</a>
+    <a href="narrativa.html">Narrativa</a>
+  </nav>
+
+</div>
+
+<!-- =================================================
+     PÁGINA
+     ================================================= -->
+
+<div class="page-wrap" id="pageWrap">
+<main class="page" id="page">
+
+  <div class="banner-space"></div>
+
+  <section class="header">
+    <div class="section-heading">ACCESO</div>
+    <div class="main-line"></div>
+  </section>
+
+  <section class="content">
+
+    <div class="article-main">
+
+      <!-- FORMULARIO DE ACCESO -->
+
+      <div class="access-container">
+
+        <div class="access-box">
+
+          <h1 class="access-title">ACCESO DE AUTORES</h1>
+
+          <p class="access-description">
+            Ingresa la clave que te fue proporcionada
+            para acceder a tu espacio de trabajo.
+          </p>
+
+          <form id="authorLogin">
+
+            <div class="access-field">
+
+              <label for="authorPassword">
+                CONTRASEÑA
+              </label>
+
+              <input
+                id="authorPassword"
+                name="password"
+                type="password"
+                autocomplete="off"
+                required
+              >
+
+            </div>
+
+            <button class="access-button" type="submit">
+              INGRESAR
+            </button>
+
+            <div
+              class="access-status"
+              id="loginStatus"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+          </form>
+
+        </div>
+
+        <!-- ACCESO PARA PERSONAS QUE NO SON AUTORES -->
+
+        <div class="guest-container">
+
+          <a class="guest-button" href="autores.html">
+            Envío de texto sin ser autor
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =================================================
+         COLUMNA LATERAL
+         ================================================= -->
+
+    <aside class="mini">
+
+      <img
+        alt="Portada de agosto"
+        class="cover"
+        src="imagenes/PORTADA-AGO.png"
+      >
+
+      <h3 class="mini-title">AGOSTO 2026</h3>
+
+      <a class="mini-box mini-link" href="SR_01.html">
+
+        <h3>COLABORACIÓN</h3>
+
+        <p>
+          <span class="star">★</span>
+          Desorden mental y una pizca de creatividad
+        </p>
+
+        <div class="mini-author">Santiago Riojas</div>
+
+      </a>
+
+      <a
+        class="instagram"
+        href="https://www.instagram.com/delirio_revista"
+        target="_blank"
+        rel="noopener"
+      >
+        <strong>Delirio</strong>
+        <span>EN INSTAGRAM</span>
+        <span>@Delirio_revista</span>
+      </a>
+
+      <a class="mini-box mini-link" href="NR_01.html">
+
+        <h3><em>Birdie</em></h3>
+
+        <p>
+          Si vuelves, si me buscas, si regresas, no importa
+          cuando, ni como, dime donde, que solo quiero eso.
+          Yo dejaré que me encuentres.
+        </p>
+
+        <div class="mini-author">Natalia Regnier</div>
+
+      </a>
+
+      <div class="ad">ANUNCIO</div>
+
+      <div class="birthday">
+        <div class="day">16</div>
+        <div class="month">AGOSTO</div>
+        <div class="name">DAVID PAREDES HERNÁNDEZ</div>
+
+        <small>
+          CUMPLEAÑOS<br>
+          CREADOR DE ESTA REVISTA
+        </small>
+      </div>
+
+      <div class="mini-access">
+        <a href="autores.html">AUTORES</a>
+      </div>
+
+    </aside>
+
+  </section>
+
+  <!-- =================================================
+       PIE DE PÁGINA
+       ================================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-instagram">◎</div>
+
+    <div class="footer-links">
+      <a href="blog.html">Blog</a>
+      <a href="revista.html">Revista</a>
+      <a href="poesia.html">Poesía</a>
+    </div>
+
+    <img
+      alt="Delirio"
+      class="footer-logo"
+      src="imagenes/LOGOSINFONDO.png"
+    >
+
+    <div class="footer-text">
+      Revista mensual digital para sentir y crear mientras se documenta la vida.<br>
+      Creada en abril de 2026.
+    </div>
+
+  </footer>
+
+</main>
+</div>
+
+<!-- =================================================
+     VALIDACIÓN Y REDIRECCIÓN
+     ================================================= -->
+
+<script>
+(() => {
+
+  const form = document.getElementById('authorLogin');
+  const pass = document.getElementById('authorPassword');
+  const status = document.getElementById('loginStatus');
+
+  /*
+    CLAVES VÁLIDAS Y PÁGINAS DE DESTINO
+
+    Sustituye cada valor vacío por el nombre del archivo
+    HTML al que debe dirigirse el autor.
+
+    Ejemplo:
+    'DH.DELIRIO.AUT': 'PANEL_DH.html'
+  */
+
+  const destinos = {
+
+    'DH.DELIRIO.AUT': '',
+    'RT.DELIRIO.AUT': '',
+    'EC.DELIRIO.AUT': '',
+    'UB.DELIRIO.AUT': '',
+    'MV.DELIRIO.AUT': '',
+    'AR.DELIRIO.AUT': '',
+    'SR.DELIRIO.AUT': '',
+    'NR.DELIRIO.AUT': ''
+
+  };
+
+  form.addEventListener('submit', event => {
+
+    event.preventDefault();
+
+    const clave = pass.value.trim().toUpperCase();
+
+    if (!Object.prototype.hasOwnProperty.call(destinos, clave)) {
+
+      status.textContent = 'Clave incorrecta.';
+      pass.focus();
+      return;
+
+    }
+
+    const destino = destinos[clave];
+
+    if (!destino) {
+
+      status.textContent =
+        'La clave es correcta, pero su página aún no está configurada.';
+
+      return;
+
+    }
+
+    window.location.href = destino;
+
+  });
+
+})();
+</script>
+
+<script src="delirio.js"></script>
+
+</body>
+</html>
+```
