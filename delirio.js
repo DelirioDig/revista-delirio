@@ -443,7 +443,7 @@
           <img src="imagenes/logoig.png" alt="Instagram">
         </a>
 
-        <a class="menu-authors-link" href="autores.html">AUTORES</a>
+        <a class="menu-authors-link" href="acceso-autores.html">AUTORES</a>
       </div>
     `;
 
