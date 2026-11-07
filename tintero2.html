@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tintero No. 2 | Sección quincenal | Delirio</title>
+
+<link href="delirio.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Young+Serif&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   PORTADA TINTERO No. 2
+   ===================================================== */
+
+.tintero-cover,
+.tintero-cover * {
+  box-sizing: border-box;
+}
+
+.tintero-cover {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 210 / 297;
+  overflow: hidden;
+  container-type: inline-size;
+
+  background-image: url("imagenes/tintero-02.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  color: #000;
+}
+
+.tintero-cover a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =====================================================
+   SECCIÓN QUINCENAL
+   ===================================================== */
+
+.tc-section {
+  position: absolute;
+  z-index: 2;
+
+  top: 14.8%;
+  right: 5%;
+  width: 23%;
+
+  margin: 0;
+
+  font-family: Poppins, sans-serif;
+  font-size: 3.1cqw;
+  font-weight: 800;
+  line-height: 1.05;
+
+  text-align: right;
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+/* =====================================================
+   NÚMERO Y FECHA DE EDICIÓN
+   ===================================================== */
+
+.tc-edition {
+  position: absolute;
+  z-index: 2;
+
+  top: 20.8%;
+  left: 5%;
+  right: 5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0;
+
+  font-family: Poppins, sans-serif;
+  font-size: 2.4cqw;
+  font-weight: 800;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* =====================================================
+   ESTILOS GENERALES DE LAS PUBLICACIONES
+   ===================================================== */
+
+.tc-story-one,
+.tc-story-two {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+}
+
+.tc-story-one a,
+.tc-story-two a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
+
+.tc-title {
+  margin: 0;
+
+  font-family: "Young Serif", serif;
+  font-size: 5.2cqw;
+  font-weight: 400;
+  line-height: 1.08;
+
+  color: #000;
+  overflow-wrap: anywhere;
+}
+
+.tc-author {
+  margin: 1.5% 0 0;
+
+  font-family: Poppins, sans-serif;
+  font-size: 2.15cqw;
+  font-weight: 800;
+  line-height: 1.3;
+
+  text-transform: uppercase;
+  color: #000;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.tc-story-one a:hover .tc-title,
+.tc-story-two a:hover .tc-title {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+/* =====================================================
+   PUBLICACIÓN 1
+   TE VOLVÍ ETERNO
+   ===================================================== */
+
+.tc-story-one {
+  top: 82.5%;
+  left: 4%;
+  width: 58%;
+}
+
+/* =====================================================
+   DIRECCIÓN DEL SITIO
+   ===================================================== */
+
+.tc-url {
+  position: absolute;
+  z-index: 2;
+
+  top: 83.8%;
+  right: 4%;
+  width: 35%;
+
+  margin: 0;
+
+  font-family: Poppins, sans-serif;
+  font-size: 2.6cqw;
+  font-weight: 400;
+  line-height: 1.25;
+
+  text-align: right;
+  overflow-wrap: anywhere;
+
+  color: #777;
+}
+
+.tc-url a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =====================================================
+   PUBLICACIÓN 2
+   NO TODO PASA INADVERTIDO
+   ===================================================== */
+
+.tc-story-two {
+  top: 89.8%;
+  left: 4%;
+  width: 92%;
+}
+
+/* =====================================================
+   LISTA DE PUBLICACIONES
+   ===================================================== */
+
+.article-main {
+  min-width: 0;
+}
+
+.blog-post-list {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+  .tintero-cover {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .tc-section {
+    font-size: 3.1cqw;
+  }
+
+  .tc-edition {
+    font-size: 2.4cqw;
+  }
+
+  .tc-title {
+    font-size: 5.2cqw;
+  }
+
+  .tc-author {
+    font-size: 2.15cqw;
+  }
+
+  .tc-url {
+    font-size: 2.6cqw;
+  }
+
+  .tc-story-one {
+    top: 82.5%;
+    width: 58%;
+  }
+
+  .tc-story-two {
+    top: 89.8%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =================================================
+     ENCABEZADO GENERAL DE DELIRIO
+     ================================================= -->
+
+<header id="top-banner">
+
+  <button
+    aria-label="Menú"
+    class="banner-menu"
+    id="menuButton"
+    type="button"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <a href="index.html">
+    <img
+      alt="Delirio"
+      class="banner-logo"
+      src="imagenes/LOGOSINFONDO.png"
+    >
+  </a>
+
+  <a class="edicion" href="revista.html">
+    EDICIÓN<br>ACTUAL
+  </a>
+
+  <button
+    aria-label="Buscar"
+    class="lupa-banner"
+    id="bannerSearch"
+    type="button"
+  ></button>
+
+</header>
+
+<!-- =================================================
+     MENÚ
+     ================================================= -->
+
+<div class="menu-panel" id="menuPanel">
+
+  <button
+    class="menu-close"
+    id="menuClose"
+    type="button"
+  >×</button>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+    <a href="cine.html">Cine</a>
+    <a href="narrativa.html">Narrativa</a>
+  </nav>
+
+</div>
+
+<!-- =================================================
+     PÁGINA
+     ================================================= -->
+
+<div class="page-wrap" id="pageWrap">
+
+<main class="page" id="page">
+
+<div class="banner-space"></div>
+
+<!-- =================================================
+     ENCABEZADO ADICIONAL DE TINTERO
+     ================================================= -->
+
+<section class="header">
+
+  <div class="section-heading">
+
+    <img
+      alt="Tintero"
+      src="imagenes/tinterosop.png"
+      style="width:300px;height:auto;"
+    >
+
+  </div>
+
+  <div class="main-line"></div>
+
+</section>
+
+<!-- =================================================
+     CONTENIDO
+     ================================================= -->
+
+<section class="content">
+
+  <!-- =================================================
+       COLUMNA PRINCIPAL
+       ================================================= -->
+
+  <div class="article-main">
+
+    <!-- =================================================
+         PORTADA TINTERO No. 2
+         ================================================= -->
+
+    <section
+      class="tintero-cover"
+      aria-label="Portada de Tintero número 2"
+    >
+
+      <!--
+        IMAGEN DE FONDO:
+
+        imagenes/tintero-02.png
+
+        Contiene:
+        - Logotipo Tintero
+        - Fondo morado
+        - Recuadro amarillo
+        - Ilustración de la rana
+        - Líneas y elementos gráficos
+      -->
+
+      <!-- SECCIÓN QUINCENAL -->
+
+      <p class="tc-section">
+        SECCIÓN<br>
+        QUINCENAL
+      </p>
+
+      <!-- NÚMERO Y FECHA -->
+
+      <div class="tc-edition">
+
+        <span>NO. 2</span>
+
+        <span>NOVIEMBRE 07 DE 2026</span>
+
+      </div>
+
+      <!-- PUBLICACIÓN 1 -->
+
+      <article class="tc-story-one">
+
+        <a href="DH_04.html">
+
+          <h2 class="tc-title">
+            Te volví eterno
+          </h2>
+
+          <p class="tc-author">
+            CUENTO / DAVID PAREDES HERNÁNDEZ
+          </p>
+
+        </a>
+
+      </article>
+
+      <!-- DIRECCIÓN DEL SITIO -->
+
+      <p class="tc-url">
+
+        <a
+          href="https://deliriodig.github.io/revista-delirio/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://deliriodig.github.io/revista-delirio/
+        </a>
+
+      </p>
+
+      <!-- PUBLICACIÓN 2 -->
+
+      <article class="tc-story-two">
+
+        <a href="MV_06.html">
+
+          <h2 class="tc-title">
+            No todo pasa inadvertido
+          </h2>
+
+          <p class="tc-author">
+            ORPHÉA / MEREDITH VILLALBA
+          </p>
+
+        </a>
+
+      </article>
+
+    </section>
+
+    <!-- FIN DE LA PORTADA -->
+
+
+    <!-- =================================================
+         LOS CINCO ENLACES DEBAJO DE LA PORTADA
+         ================================================= -->
+
+    <div class="blog-post-list">
+
+      <!-- ENLACE 1 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="DH_03.html"
+        data-title="Te volví eterno"
+        href="DH_03.html"
+      >
+
+        <div class="blog-post-info">
+
+          <div class="blog-post-type">
+            CUENTO
+          </div>
+
+          <h2>Te volví eterno</h2>
+
+          <div class="blog-post-date">
+            DAVID PAREDES HERNÁNDEZ
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- ENLACE 2 -->
+
+      <a
+        class="blog-post-entry searchable"
+        data-href="MV_06.html"
+        data-title="No todo pasa inadvertido"
+        href="MV_06.html"
+      >
+
+        <div class="blog-post-info">
+
+          <div class="blog-post-type">
+            ORPHÉA
+          </div>
+
+          <h2>No todo pasa inadvertido</h2>
+
+          <div class="blog-post-date">
+            MEREDITH VILLALBA
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+    <!-- FIN DE LOS CINCO ENLACES -->
+
+  </div>
+
+  <!-- FIN DE ARTICLE-MAIN -->
+
+
+  <!-- ===================================================
+       MINI: BARRA LATERAL ORIGINAL
+       =================================================== -->
+
+  <aside class="mini">
+
+    <img
+      alt="Portada de agosto"
+      class="cover"
+      src="imagenes/PORTADA-AGO.png"
+    >
+
+    <h3 class="mini-title">
+      AGOSTO 2026
+    </h3>
+
+    <a class="mini-box mini-link" href="SR_01.html">
+
+      <h3>COLABORACIÓN</h3>
+
+      <p>
+        <span class="star">★</span>Desorden mental y una pizca de creatividad
+      </p>
+
+      <div class="mini-author">
+        Santiago Riojas
+      </div>
+
+    </a>
+
+    <a
+      class="instagram"
+      href="https://www.instagram.com/delirio_revista"
+      rel="noopener"
+      target="_blank"
+    >
+
+      <strong>Delirio</strong>
+      <span>EN INSTAGRAM</span>
+      <span>@Delirio_revista</span>
+
+    </a>
+
+    <a class="mini-box mini-link" href="NR_01.html">
+
+      <h3><em>Birdie</em></h3>
+
+      <p>
+        Si vuelves, si me buscas, si regresas, no importa cuando,
+        ni como, dime donde, que solo quiero eso. Yo dejaré que me
+        encuentres. Casi no le tengo miedo a nada; pero nunca dejar
+        de sentir esto me tiene aterrada. Sé que mereces el amor que
+        yo te ofrezco, pero yo, no merezco el fallido intento de amor
+        que te agradezco; aún así vuelve, que siento que me ahogo.
+      </p>
+
+      <div class="mini-author">
+        Natalia Regnier
+      </div>
+
+    </a>
+
+    <div class="ad">
+      ANUNCIO
+    </div>
+
+    <div class="birthday">
+
+      <div class="day">16</div>
+
+      <div class="month">AGOSTO</div>
+
+      <div class="name">
+        DAVID PAREDES HERNÁNDEZ
+      </div>
+
+      <small>
+        CUMPLEAÑOS<br>
+        CREADOR DE ESTA REVISTA
+      </small>
+
+    </div>
+
+    <div class="mini-access">
+      <a href="autores.html">AUTORES</a>
+    </div>
+
+  </aside>
+
+  <!-- FIN DE MINI -->
+
+</section>
+
+<!-- FIN DE CONTENT -->
+
+
+<!-- =================================================
+     PIE DE PÁGINA
+     ================================================= -->
+
+<footer class="footer">
+
+  <div class="footer-instagram">
+    ◎
+  </div>
+
+  <div class="footer-links">
+
+    <a href="blog.html">Blog</a>
+    <a href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+
+  </div>
+
+  <img
+    alt="Delirio"
+    class="footer-logo"
+    src="imagenes/LOGOSINFONDO.png"
+  >
+
+  <div class="footer-text">
+
+    Revista mensual digital para sentir y crear mientras se documenta la vida.<br>
+    Creada en abril de 2026.
+
+  </div>
+
+</footer>
+
+</main>
+</div>
+
+<!-- =================================================
+     JAVASCRIPT GENERAL
+     ================================================= -->
+
+<script src="delirio.js"></script>
+
+</body>
+</html>
