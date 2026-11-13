@@ -96,7 +96,7 @@
      ============================================================ */
 
   const SIDEBAR = {
-    portada: "imagenes/PORTADA-AGO.png",
+    portada: "imagenes/PORTADA-OTO.png",
     colaboracion: {
       titulo: "Desorden mental y una pizca de creatividad",
       autor: "Santiago Riojas",
@@ -133,8 +133,8 @@
      ============================================================ */
 
   const MINI = {
-    portada: "imagenes/PORTADA-AGO.png",
-    edicion: "AGOSTO 2026",
+    portada: "imagenes/PORTADA-OTO.png",
+    edicion: "OTOÑO 2026",
     colaboracion: {
       titulo: "Desorden mental y una pizca de creatividad",
       autor: "Santiago Riojas",
@@ -376,7 +376,7 @@
     {initial:"E", name:"Elizabeth Campos", image:"imagenes/PERFIL_EC.jpg", href:"A-Elizabeth-C.html"},
     {initial:"E", name:"Enrique Tinajero", image:"imagenes/PERFIL.png", href:"ET.CUENTO1.html"},
     {initial:"E", name:"Ethel García", image:"imagenes/PERFIL_EG.jpg", href:"A-Ethel-G.html"},
-    {initial:"E", name:"Eloide Sokolova", image:"imagenes/PERFIL_ES.jpg", href:"A-Eloide-S.html"},
+    {initial:"E", name:"Elodie Sokolova", image:"imagenes/PERFIL_ES.jpg", href:"A-Elodie-S.html"},
     {initial:"M", name:"Meredith Villalba", image:"imagenes/PERFIL_MV.jpg", href:"A-Meredith-V.html"},
     {initial:"N", name:"Natalia Regnier", image:"imagenes/PERFIL_NR.jpg", href:"A-Natalia-R.html"},
     {initial:"R", name:"Renata Tetlamatzi", image:"imagenes/PERFIL_RT.jpg", href:"A-Renata-T.html"},
