@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Revista | Payaso — Delirio</title>
+
+<link rel="stylesheet" href="delirio.css">
+
+<style>
+
+/* =====================================================
+   BANNER DE SECCIÓN
+   ===================================================== */
+
+.revista-banner {
+  width: 100%;
+  background: #c14e59;
+  color: #fff;
+  font-family: "Young Serif", Georgia, serif;
+  font-size: 48px;
+  line-height: 1.15;
+  text-align: center;
+  padding: 17px 15px 19px;
+  box-sizing: border-box;
+  margin: 0 0 30px;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   VISOR DE PORTADA Y CONTRAPORTADA
+   ===================================================== */
+
+.portada-visor {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.portada-stage {
+  width: 100%;
+  max-width: 390px;
+  perspective: 1400px;
+}
+
+.portada-card {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 3 / 4;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.portada-card.girada {
+  transform: rotateY(180deg);
+}
+
+.portada-cara {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0,0,0,.20);
+  background: #eee;
+}
+
+.portada-cara img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.portada-trasera {
+  transform: rotateY(180deg);
+}
+
+.portada-flecha {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border: 1px solid #111;
+  background: transparent;
+  color: #111;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background .2s ease, color .2s ease;
+}
+
+.portada-flecha:hover {
+  background: #c14e59;
+  color: #fff;
+  border-color: #c14e59;
+}
+
+.portada-indicador {
+  font-family: "Cairo", Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 14px;
+  color: #777;
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   INFORMACIÓN DE LA EDICIÓN
+   ===================================================== */
+
+.edicion-info {
+  width: 100%;
+  margin: 48px auto 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.edicion-temporada {
+  font-family: "Cairo", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #c14e59;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.edicion-titulo {
+  font-family: "Young Serif", Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  color: var(--texto, #111);
+}
+
+.edicion-descripcion {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: justify;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.65;
+  color: var(--texto, #111);
+}
+
+
+/* =====================================================
+   VISOR FLIPHTML
+   ===================================================== */
+
+.fliphtml-visor {
+  width: 100%;
+  margin: 38px auto 0;
+}
+
+.fliphtml-contenedor {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: max(60%,324px);
+  overflow: hidden;
+}
+
+.fliphtml-contenedor iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+/* =====================================================
+   DESCARGA
+   ===================================================== */
+
+.download-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 16px 12px;
+  box-sizing: border-box;
+}
+
+.download-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Cairo", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background .2s ease, color .2s ease;
+}
+
+.download-button:hover {
+  background: #c14e59;
+  border-color: #c14e59;
+  color: #fff;
+}
+
+.download-icon {
+  font-size: 19px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .revista-banner {
+    font-size: 37px;
+    padding: 14px 10px 16px;
+    margin-bottom: 24px;
+  }
+
+  .portada-visor {
+    gap: 8px;
+  }
+
+  .portada-stage {
+    max-width: 75%;
+  }
+
+  .portada-flecha {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 23px;
+  }
+
+  .edicion-info {
+    margin-top: 36px;
+  }
+
+  .edicion-temporada {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .edicion-titulo {
+    font-size: 39px;
+  }
+
+  .edicion-descripcion {
+    text-align: left;
+  }
+
+  .fliphtml-visor {
+    margin-top: 28px;
+  }
+
+  .fliphtml-contenedor {
+    padding-top: 75%;
+    min-height: 300px;
+  }
+
+  .download-button {
+    padding: 12px 18px;
+    font-size: 12px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     BANNER SUPERIOR
+     ===================================================== -->
+
+<header id="top-banner">
+
+  <button
+    class="banner-menu"
+    id="menuButton"
+    aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <a href="index.html">
+    <img
+      class="banner-logo"
+      src="imagenes/LOGOSINFONDO.png"
+      alt="Delirio">
+  </a>
+
+  <a
+    class="edicion"
+    href="revista.html">
+    EDICIÓN<br>ACTUAL
+  </a>
+
+  <button
+    class="lupa-banner"
+    id="bannerSearch"
+    aria-label="Buscar">
+  </button>
+
+</header>
+
+
+<!-- =====================================================
+     MENÚ
+     ===================================================== -->
+
+<div class="menu-panel" id="menuPanel">
+
+  <button
+    class="menu-close"
+    id="menuClose"
+    aria-label="Cerrar menú">
+    ×
+  </button>
+
+  <nav>
+
+    <a href="index.html">Inicio</a>
+    <a href="blog.html">Blog</a>
+    <a class="active" href="revista.html">Revista</a>
+    <a href="poesia.html">Poesía</a>
+    <a href="cine.html">Cine</a>
+    <a href="narrativa.html">Narrativa</a>
+
+  </nav>
+
+</div>
+
+
+<!-- =====================================================
+     PÁGINA
+     ===================================================== -->
+
+<div class="page-wrap" id="pageWrap">
+
+  <main class="page" id="page">
+
+    <div class="banner-space"></div>
+
+
+    <!-- =================================================
+         CONTENIDO
+         ================================================= -->
+
+    <section class="content" id="content">
+
+
+      <!-- =================================================
+           COLUMNA PRINCIPAL
+           ================================================= -->
+
+      <div>
+
+
+        <!-- BANNER REVISTA -->
+
+        <div class="revista-banner">
+          REVISTA
+        </div>
+
+
+        <!-- =================================================
+             VISOR DE PORTADA Y CONTRAPORTADA
+             ================================================= -->
+
+        <section class="portada-visor">
+
+          <button
+            class="portada-flecha"
+            id="portadaAnterior"
+            aria-label="Ver portada">
+            ‹
+          </button>
+
+          <div class="portada-stage">
+
+            <div class="portada-card" id="portadaCard">
+
+              <!-- PORTADA -->
+
+              <div class="portada-cara portada-frontal">
+
+                <img
+                  src="imagenes/PORTADA-OTO.png"
+                  alt="Portada de la edición Payaso">
+
+              </div>
+
+
+              <!-- CONTRAPORTADA -->
+
+              <div class="portada-cara portada-trasera">
+
+                <img
+                  src="imagenes/CONTRA-OTO.png"
+                  alt="Contraportada de la edición Payaso">
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <button
+            class="portada-flecha"
+            id="portadaSiguiente"
+            aria-label="Ver contraportada">
+            ›
+          </button>
+
+        </section>
+
+        <div class="portada-indicador" id="portadaIndicador">
+          PORTADA
+        </div>
+
+
+
+        <!-- =================================================
+             INFORMACIÓN DE LA EDICIÓN
+             ================================================= -->
+
+        <section class="edicion-info">
+
+          <div class="edicion-temporada">
+            OTOÑO 2026
+          </div>
+
+          <h1 class="edicion-titulo">
+            Payaso
+          </h1>
+
+          <div class="edicion-descripcion">
+
+            <p>
+              <!-- ESCRIBE AQUÍ LA DESCRIPCIÓN DE LA EDICIÓN -->
+            </p>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             VISOR FLIPHTML
+             ================================================= -->
+
+        <section class="fliphtml-visor">
+
+          <div class="fliphtml-contenedor">
+
+            <iframe
+              src="PEGA_AQUI_EL_ENLACE_DE_FLIPHTML"
+              title="Revista Delirio — Payaso, Otoño 2026"
+              allowfullscreen="true"
+              scrolling="no">
+            </iframe>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BOTÓN DESCARGAR HTML
+             ================================================= -->
+
+        <div class="download-wrap">
+
+          <a
+            class="download-button"
+            href="PEGA_AQUI_EL_ENLACE_DE_GOOGLE_DRIVE"
+            target="_blank"
+            rel="noopener">
+
+            <span class="download-icon" aria-hidden="true">
+              ⬇
+            </span>
+
+            <span>
+              Descargar HTML
+            </span>
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           COLUMNA MINI
+           ================================================= -->
+
+      <aside class="mini">
+
+        <img
+          class="cover"
+          src="imagenes/PORTADA-AGO.png"
+          alt="Portada de agosto">
+
+
+        <h3 class="mini-title">
+          AGOSTO 2026
+        </h3>
+
+
+        <!-- MINI 1 -->
+
+        <a class="mini-box mini-link" href="SR_01.html">
+
+          <h3>COLABORACIÓN</h3>
+
+          <p>
+            <span class="star">★</span>
+            Desorden mental y una pizca de creatividad
+          </p>
+
+          <div class="mini-author">
+            Santiago Riojas
+          </div>
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+          class="instagram"
+          href="https://www.instagram.com/delirio_revista"
+          target="_blank"
+          rel="noopener">
+
+          <strong>Delirio</strong>
+
+          <span>EN INSTAGRAM</span>
+
+          <span>@Delirio_revista</span>
+
+        </a>
+
+
+        <!-- MINI 2 -->
+
+        <a class="mini-box mini-link" href="NR_01.html">
+
+          <h3><em>Birdie</em></h3>
+
+          <p>
+            Si vuelves, si me buscas, si regresas, no importa
+            cuando, ni como, dime donde, que solo quiero eso.
+            Yo dejaré que me encuentres. Casi no le tengo miedo
+            a nada; pero nunca dejar de sentir esto me tiene
+            aterrada. Sé que mereces el amor que yo te ofrezco,
+            pero yo, no merezco el fallido intento de amor que
+            te agradezco; aún así vuelve, que siento que me ahogo.
+          </p>
+
+          <div class="mini-author">
+            Natalia Regnier
+          </div>
+
+        </a>
+
+
+        <!-- ANUNCIO -->
+
+        <div class="ad">
+          ANUNCIO
+        </div>
+
+
+        <!-- CUMPLEAÑOS -->
+
+        <div class="birthday">
+
+          <div class="day">16</div>
+
+          <div class="month">AGOSTO</div>
+
+          <div class="name">
+            DAVID PAREDES HERNÁNDEZ
+          </div>
+
+          <small>
+            CUMPLEAÑOS<br>
+            CREADOR DE ESTA REVISTA
+          </small>
+
+        </div>
+
+
+        <!-- ACCESOS -->
+
+        <div class="mini-access">
+
+          <a href="autores.html">
+            AUTORES
+          </a>
+
+        </div>
+
+      </aside>
+
+
+      <!-- RESULTADO SIN RESULTADOS -->
+
+      <div class="no-results" id="noResults">
+        NO HAY RESULTADOS
+      </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <footer class="footer">
+
+      <div class="footer-instagram">
+        ◎
+      </div>
+
+      <div class="footer-links">
+
+        <a href="blog.html">Blog</a>
+        <a href="revista.html">Revista</a>
+        <a href="poesia.html">Poesía</a>
+
+      </div>
+
+      <img
+        class="footer-logo"
+        src="imagenes/LOGOSINFONDO.png"
+        alt="Delirio">
+
+      <div class="footer-text">
+
+        Revista mensual digital para sentir y crear
+        mientras se documenta la vida.<br>
+
+        Creada en abril de 2026.
+
+      </div>
+
+    </footer>
+
+  </main>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT GLOBAL
+     ===================================================== -->
+
+<script src="delirio.js"></script>
+
+
+<!-- =====================================================
+     JAVASCRIPT DEL VISOR DE PORTADA
+     ===================================================== -->
+
+<script>
+
+(function () {
+
+  const card = document.getElementById("portadaCard");
+  const indicador = document.getElementById("portadaIndicador");
+
+  const anterior = document.getElementById("portadaAnterior");
+  const siguiente = document.getElementById("portadaSiguiente");
+
+  if (!card || !indicador || !anterior || !siguiente) return;
+
+  let girada = false;
+
+  function actualizarPortada() {
+
+    card.classList.toggle("girada", girada);
+
+    indicador.textContent = girada
+      ? "CONTRAPORTADA"
+      : "PORTADA";
+
+  }
+
+  anterior.addEventListener("click", function () {
+    girada = false;
+    actualizarPortada();
+  });
+
+  siguiente.addEventListener("click", function () {
+    girada = true;
+    actualizarPortada();
+  });
+
+  actualizarPortada();
+
+})();
+
+</script>
+
+</body>
+</html>
