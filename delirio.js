@@ -1020,7 +1020,8 @@
     "a-ulises-b.html":"imagenes/PERFIL_UB.jpg",
     "estante.html":"imagenes/PERFIL_EST.jpg",
     "a-santiago-r.html":"imagenes/COLOR_SR (1).png",
-    "a-natalia-r.html":"imagenes/PERFIL_NR.jpg"
+    "a-natalia-r.html":"imagenes/PERFIL_NR.jpg",
+    "a-ximena-g.html":"imagenes/COLOR_XG.png"
   };
 
   const pageFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
